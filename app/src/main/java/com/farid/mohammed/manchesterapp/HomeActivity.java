@@ -28,7 +28,6 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        GridView gridview = (GridView) findViewById(R.id.activity_home);
         CustemGridView adapterViewAndroid = new CustemGridView(HomeActivity.this, gridViewString, gridViewImageId);
         androidGridView=(GridView)findViewById(R.id.grid_view_image_text);
         androidGridView.setAdapter(adapterViewAndroid);
@@ -37,7 +36,9 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int i, long id) {
-                Toast.makeText(HomeActivity.this, "GridView Item: " + gridViewString[+i], Toast.LENGTH_LONG).show();
+                //Toast.makeText(HomeActivity.this, "GridView Item: " + gridViewString[+i], Toast.LENGTH_SHORT).show();
+                finish();
+
             }
         });
 

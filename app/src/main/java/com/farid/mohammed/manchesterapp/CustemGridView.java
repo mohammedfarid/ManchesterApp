@@ -21,7 +21,7 @@ public class CustemGridView extends BaseAdapter {
     private final int[] gridViewImageId;
 
     public CustemGridView(Context context, String[] gridViewString, int[] gridViewImageId) {
-        mContext = context;
+        this.mContext = context;
         this.gridViewImageId = gridViewImageId;
         this.gridViewString = gridViewString;
     }
@@ -48,7 +48,6 @@ public class CustemGridView extends BaseAdapter {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         if (convertView == null) {
-
             gridViewAndroid = new View(mContext);
             gridViewAndroid = inflater.inflate(R.layout.listview_with_text_image, null);
             TextView textViewAndroid = (TextView) gridViewAndroid.findViewById(R.id.android_gridview_text);
