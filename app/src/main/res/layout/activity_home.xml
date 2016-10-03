@@ -3,7 +3,10 @@
     android:id="@+id/android_gridview_example"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginTop="150dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp">
 
     <GridView
         android:id="@+id/grid_view_image_text"
@@ -11,5 +14,5 @@
         android:layout_height="match_parent"
         android:columnWidth="110dp"
         android:gravity="center"
-        android:numColumns="2" />
+        android:numColumns="3" />
 </LinearLayout>
