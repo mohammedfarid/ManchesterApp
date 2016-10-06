@@ -1,5 +1,6 @@
 package com.farid.mohammed.manchesterapp;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
-
+    Intent intent;
     GridView androidGridView;
 
     String[] gridViewString = {
@@ -31,6 +32,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_home);
+        intent = new Intent(this, MenusFoodsActivity.class);
         CustemGridView adapterViewAndroid = new CustemGridView(HomeActivity.this, gridViewString, gridViewImageId);
         androidGridView=(GridView)findViewById(R.id.grid_view_image_text);
         androidGridView.setAdapter(adapterViewAndroid);
@@ -40,8 +42,8 @@ public class HomeActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int i, long id) {
                 //Toast.makeText(HomeActivity.this, "GridView Item: " + gridViewString[+i], Toast.LENGTH_SHORT).show();
-                finish();
-
+                //finish();
+                startActivity(intent);
             }
         });
 
