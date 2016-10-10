@@ -10,10 +10,10 @@ public class SeaFoodManchester {
             R.mipmap.ic_launcher,
             R.mipmap.ic_launcher,
             R.mipmap.ic_launcher,
-};
+    };
     public String [] listViewString={
             "جمبرى",
             "سيبيا",
             "فياجرا مانشتر",
-           };
+    };
 }
