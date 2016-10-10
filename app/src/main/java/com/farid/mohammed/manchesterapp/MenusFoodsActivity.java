@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class MenusFoodsActivity extends AppCompatActivity {
     ListView androidListView;
     Intent intent;
+    SeaFoodManchester seaFoodManchester;
     public static int [] listViewImage={
             R.mipmap.ic_launcher,
             R.mipmap.ic_launcher,
@@ -40,9 +41,11 @@ public class MenusFoodsActivity extends AppCompatActivity {
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_menus_foods);
 
+        seaFoodManchester = new SeaFoodManchester();
         intent = new Intent(this, LocationPlaceaActivity.class);
 
-        CustomListView adapterViewAndroid = new CustomListView(MenusFoodsActivity.this,listViewString,listViewImage);
+        CustomListView adapterViewAndroid = new CustomListView(MenusFoodsActivity.this,
+                seaFoodManchester.listViewString,seaFoodManchester.listViewImage);
         androidListView=(ListView) findViewById(R.id.listView);
         androidListView.setAdapter(adapterViewAndroid);
         androidListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

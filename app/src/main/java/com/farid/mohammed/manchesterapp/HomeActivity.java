@@ -17,9 +17,11 @@ public class HomeActivity extends AppCompatActivity {
     GridView androidGridView;
 
     String[] gridViewString = {
-            "Alram", "Android", "Mobile", "Website", "Profile", "WordPress"
+            "Italian Pizza", "Meat Manchester", "Chickens Manchester", "Sea Food Manchester",
+            "Cheese Manchester", "Sweet Manchester","Contact Us"
     } ;
     int[] gridViewImageId = {
+            R.mipmap.ic_launcher,
             R.mipmap.ic_launcher,
             R.mipmap.ic_launcher,
             R.mipmap.ic_launcher,
