@@ -5,7 +5,7 @@ package com.farid.mohammed.manchesterapp;
  */
 
 public class SeaFoodManchester {
-    public String title = "Sea Food Manchestee";
+    public String title = "سى فوود مانشستر";
     public int [] listViewImage={
             R.mipmap.ic_launcher,
             R.mipmap.ic_launcher,
