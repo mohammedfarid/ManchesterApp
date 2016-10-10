@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 package="com.farid.mohammed.manchesterapp">
-<!-- api key : AIzaSyBRqEUfoVodSW8btcu0WksAgQFoL7nsuvQ -->
-<application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name"
-    android:supportsRtl="true" android:theme="@style/AppTheme">
-    <activity android:name=".SplashActivity" android:screenOrientation="sensorPortrait"
+<application android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme">
+    <activity android:name=".SplashActivity"
+        android:screenOrientation="sensorPortrait"
         android:theme="@style/SplashTheme">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -25,7 +29,8 @@ package="com.farid.mohammed.manchesterapp">
     <meta-data android:name="com.google.android.geo.API_KEY"
         android:value="@string/google_maps_key" />
 
-    <activity android:name="com.farid.mohammed.manchesterapp.LocationPlaceaActivity" android:label="@string/title_activity_location_placea">
+    <activity android:name="com.farid.mohammed.manchesterapp.LocationPlaceaActivity"
+        android:label="@string/title_activity_location_placea">
 
     </activity>
 </application>
