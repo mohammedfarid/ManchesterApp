@@ -17,26 +17,7 @@ public class MenusFoodsActivity extends AppCompatActivity {
     Intent intent;
     TextView title;
     SeaFoodManchester seaFoodManchester;
-    public static int [] listViewImage={
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher};
-    public static String [] listViewString={
-            "Let Us C",
-            "c++",
-            "JAVA",
-            "Jsp",
-            "Microsoft .Net",
-            "Android",
-            "PHP",
-            "Jquery",
-            "JavaScript"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
