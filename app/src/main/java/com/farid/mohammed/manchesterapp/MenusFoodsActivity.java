@@ -8,12 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class MenusFoodsActivity extends AppCompatActivity {
     ListView androidListView;
     Intent intent;
+    TextView title;
     SeaFoodManchester seaFoodManchester;
     public static int [] listViewImage={
             R.mipmap.ic_launcher,
@@ -40,10 +42,11 @@ public class MenusFoodsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_menus_foods);
-
+        title = (TextView) findViewById(R.id.title_food);
         seaFoodManchester = new SeaFoodManchester();
         intent = new Intent(this, LocationPlaceaActivity.class);
 
+        title.setText(seaFoodManchester.title);
         CustomListView adapterViewAndroid = new CustomListView(MenusFoodsActivity.this,
                 seaFoodManchester.listViewString,seaFoodManchester.listViewImage);
         androidListView=(ListView) findViewById(R.id.listView);
