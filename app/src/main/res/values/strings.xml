@@ -3,4 +3,7 @@
     <string name="title_activity_location_placea">Map</string>
     <string name="developer">Developed By</string>
     <string name="companyname">Our Company</string>
+    <string name="caffeeName">Manchester Cafe</string>
+    <string name="caffeeNum">01204032829</string>
+    <string name="callCafe">Call</string>
 </resources>
