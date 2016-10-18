@@ -1,28 +1,20 @@
 package com.farid.mohammed.manchesterapp;
 
+import android.*;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentActivity;
+import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v4.content.ContextCompat;
-import android.os.Bundle;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.net.Uri;
-import android.widget.TextView;
 import android.widget.Toast;
-import android.Manifest;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -32,72 +24,42 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.util.zip.Inflater;
-
-public class LocationPlaceaActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class DevelopeByActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    Button buttonCall;
-    TextView textNum;
     private Toolbar toolbar;
     //Permision code that will be checked in the method onRequestPermissionsResult
     private int STORAGE_PERMISSION_CODE = 23;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        setContentView(R.layout.activity_location_placea);
+        setContentView(R.layout.activity_develope_by);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         if(isReadStorageAllowed()){
             //If permission is already having then showing the toast
-            Toast.makeText(LocationPlaceaActivity.this,"You already have the permission",Toast.LENGTH_LONG).show();
+            Toast.makeText(DevelopeByActivity.this,"You already have the permission",Toast.LENGTH_LONG).show();
             //Existing the method with return
             return;
         }
 
         //If the app has not the permission then asking for the permission
         requestStoragePermission();
-
-        buttonCall = (Button) findViewById(R.id.caffeeCall);
-        textNum = (TextView) findViewById(R.id.caffeeNum);
-
-        // add button listener
-        buttonCall.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                Toast.makeText(getApplicationContext(),textNum.getText().toString(),Toast.LENGTH_SHORT).show();
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:"+textNum.getText().toString()));
-               try{
-                   startActivity(callIntent);
-               } catch (Exception e){
-
-               }
-
-            }
-
-        });
-
     }
-
     //We are calling this method to check the permission status
     private boolean isReadStorageAllowed() {
         //Getting the permission status
         int result = ContextCompat.checkSelfPermission(this,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE)+
+                android.Manifest.permission.WRITE_EXTERNAL_STORAGE)+
                 ContextCompat.checkSelfPermission(this,
-                Manifest.permission.CALL_PHONE);
+                        android.Manifest.permission.CALL_PHONE);
 
         //If permission is granted returning true
         if (result == PackageManager.PERMISSION_GRANTED)
@@ -111,17 +73,17 @@ public class LocationPlaceaActivity extends AppCompatActivity implements OnMapRe
     private void requestStoragePermission(){
 
         if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE)||
+                android.Manifest.permission.WRITE_EXTERNAL_STORAGE)||
                 ActivityCompat.shouldShowRequestPermissionRationale(this,
-                        Manifest.permission.CALL_PHONE)){
+                        android.Manifest.permission.CALL_PHONE)){
             //If the user has denied the permission previously your code will come to this block
             //Here you can explain why you need this permission
             //Explain here why you need this permission
         }
 
         //And finally ask for the permission
-        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
-        Manifest.permission.CALL_PHONE}
+        ActivityCompat.requestPermissions(this,new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        android.Manifest.permission.CALL_PHONE}
                 ,STORAGE_PERMISSION_CODE);
     }
 
@@ -180,6 +142,7 @@ public class LocationPlaceaActivity extends AppCompatActivity implements OnMapRe
         }
         return true;
     }
+
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -194,12 +157,12 @@ public class LocationPlaceaActivity extends AppCompatActivity implements OnMapRe
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng manchester = new LatLng(31.083202, 31.491318);
+        LatLng spot = new LatLng(31.083202, 31.491318);
         mMap.addMarker(new MarkerOptions()
-                .position(manchester)
-                .title("Manchester restaurant")
-                .snippet("For Fast Food")
-                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(manchester,15));
+                .position(spot)
+                .title("Spot Inc Company")
+                .snippet("For Mobile App")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_company_logo)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(spot,15));
     }
 }

@@ -1,13 +1,19 @@
 package com.farid.mohammed.manchesterapp;
 
+import android.*;
+import android.Manifest;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -31,6 +37,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private int seletedId;
     private  boolean userSawDrawer = false;
+
+    static final String ACTION_SCAN = "com.google.zxing.client.android.SCAN";
 
     Intent intent,intent2;
     GridView androidGridView;
@@ -75,7 +83,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
         seletedId = savedInstanceState == null ? R.id.menus_food : savedInstanceState.getInt(SELECT_ITEM_ID);
         navigated(seletedId);
-
 
         intent2 = new Intent(this,LocationPlaceaActivity.class);
 
@@ -161,7 +168,17 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             startActivity(intent);
         }
         if(seletedId == R.id.bar_code){
-            intent = new Intent(this,LocationPlaceaActivity.class);
+            drawerLayout.closeDrawer(GravityCompat.START);
+            try{
+                intent = new Intent(ACTION_SCAN);
+                intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
+                startActivityForResult(intent, 0);
+            }catch (ActivityNotFoundException anfe){
+
+            }
+        }
+        if(seletedId == R.id.developed_by){
+            intent = new Intent(this,DevelopeByActivity.class);
             drawerLayout.closeDrawer(GravityCompat.START);
             startActivity(intent);
         }
@@ -212,6 +229,19 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             super.onBackPressed();
         }
     }
+    //on ActivityResult method
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == 0) {
+            if (resultCode == RESULT_OK) {
+                //get the extras that are returned from the intent
+                String contents = intent.getStringExtra("SCAN_RESULT");
+                String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
+                Toast toast = Toast.makeText(this, "Content:" + contents + " Format:" + format, Toast.LENGTH_LONG);
+                toast.show();
+            }
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
