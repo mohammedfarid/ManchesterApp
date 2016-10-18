@@ -3,9 +3,13 @@ package com.farid.mohammed.manchesterapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -15,6 +19,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MenusFoodsActivity extends AppCompatActivity {
+
+    private Toolbar toolbar;
+
     ListView androidListView;
     Intent intent;
     TextView title;
@@ -42,6 +49,12 @@ public class MenusFoodsActivity extends AppCompatActivity {
         title = (TextView) findViewById(R.id.title_food);
         intent = new Intent(this, LocationPlaceaActivity.class);
 
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         italianPizzaManchester = new ItalianPizzaManchester();
         meatManchester = new MeatManchester();
         chickensManchester = new ChickensManchester();
@@ -61,8 +74,6 @@ public class MenusFoodsActivity extends AppCompatActivity {
 
 
         if(italianPizza){
-            Toast.makeText(getApplicationContext(),"ita2",Toast.LENGTH_SHORT).show();
-
             title.setText(italianPizzaManchester.title);
             adapterViewAndroid = new CustomListView(MenusFoodsActivity.this,
                     italianPizzaManchester.listViewString,italianPizzaManchester.listViewImage);
@@ -105,5 +116,40 @@ public class MenusFoodsActivity extends AppCompatActivity {
 
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        // Configure the search info and add any event listeners...
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        try {
+            switch (item.getItemId()) {
+                case android.R.id.home:
+                    Toast.makeText(getApplicationContext(),"actionSetting",Toast.LENGTH_SHORT).show();
+                    NavUtils.navigateUpFromSameTask(this);
+                    break;
+                case R.id.activity_share:
+                    Toast.makeText(getApplicationContext(),"share",Toast.LENGTH_SHORT).show();
+                    Intent share = new Intent(android.content.Intent.ACTION_SEND);
+                    share.setType("text/plain");
+                    share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+
+                    // Add data to the intent, the receiving app will decide
+                    // what to do with it.
+                    share.putExtra(Intent.EXTRA_SUBJECT, "Title Of The Post");
+                    share.putExtra(Intent.EXTRA_TEXT, "http://www.codeofaninja.com");
+
+                    startActivity(Intent.createChooser(share, "Share link!"));
+                    break;
+                default:
+                    return super.onOptionsItemSelected(item);
+            }
+        } catch (Exception e) {
+
+        }
+        return true;
     }
 }

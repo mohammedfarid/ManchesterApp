@@ -6,4 +6,28 @@
     <string name="caffeeName">Manchester Cafe</string>
     <string name="caffeeNum">01204032829</string>
     <string name="callCafe">Call</string>
+    <string name="title_activity_home_menu">HomeMenuActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Next">Next</string>
+    <string name="drawer_open">OPEN</string>
+    <string name="drawer_close">CLOSE</string>
+
+    <string name="contact_us">Contact Us</string>
+    <string name="reseved_table">Reserve Table</string>
+    <string name="bar_code">Bar Code</string>
+    <string name="menus_food">Menus Food</string>
+    <string name="developed_by">Developed By</string>
+    <string name="navigation_item_6">Item6</string>
+    <string name="navigation_item_7">Item7</string>
+
+    <string name="small_size">SM</string>
+    <string name="medium_size">ME</string>
+    <string name="large_size">LA</string>
 </resources>

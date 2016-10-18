@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/menu_groups"
+        android:checkableBehavior="single">
+        <item android:id="@+id/menus_food"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/menus_food"/>
+        <item android:id="@+id/contact_us"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/contact_us"/>
+        <item android:id="@+id/reseved_table"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/reseved_table"/>
+        <item android:id="@+id/bar_code"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/bar_code"/>
+        <item android:id="@+id/developed_by"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/developed_by"/>
+    </group>
+    <group
+    android:id="@+id/content_group"
+    android:checkableBehavior="single">
+
+
+    </group>
+
+</menu>

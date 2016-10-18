@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +43,7 @@ public class CustomListView extends BaseAdapter {
     {
         TextView tv;
         ImageView img;
+        CheckBox sm,me,la;
     }
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
@@ -52,6 +54,9 @@ public class CustomListView extends BaseAdapter {
             listViewAndroid = inflater.inflate(R.layout.program_list, null);
             holder.tv=(TextView) listViewAndroid.findViewById(R.id.textView1);
             holder.img=(ImageView) listViewAndroid.findViewById(R.id.imageView1);
+            holder.sm = (CheckBox) listViewAndroid.findViewById(R.id.small_size);
+            holder.me = (CheckBox) listViewAndroid.findViewById(R.id.medium_size);
+            holder.la = (CheckBox) listViewAndroid.findViewById(R.id.large_size);
             holder.tv.setText(listViewString[position]);
             holder.img.setImageResource(listViewImageId[position]);
         }else{
