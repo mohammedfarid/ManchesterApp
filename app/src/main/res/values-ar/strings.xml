@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">Manchester</string>
-    <string name="title_activity_location_placea">Map</string>
-    <string name="developer">Developed By</string>
-    <string name="caffeeName">Manchester Cafe</string>
+    <string name="app_name">مانشستر</string>
+    <string name="title_activity_location_placea">خريطة</string>
+    <string name="developer">طور بواسطة</string>
+    <string name="caffeeName">مانشستر كافيه</string>
     <string name="caffeeNum">01020988886</string>
     <string name="caffeePage">www.facebook.com/manchestermasr</string>
-    <string name="callCafe">Call</string>
+    <string name="callCafe">إتصال</string>
     <string name="title_activity_home_menu">HomeMenuActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -17,32 +17,31 @@
     <string name="drawer_open">OPEN</string>
     <string name="drawer_close">CLOSE</string>
     <!--Meuns navigation-->
-    <string name="contact_us">Contact Us</string>
-    <string name="reseved_table">Reserve Table</string>
-    <string name="bar_code">Share Application</string>
-    <string name="menus_food">Menus</string>
-    <string name="developed_by">Developed By</string>
-    <string name="branch">Branches</string>
-    <string name="offers_events">Offer / Events</string>
+    <string name="contact_us">إتصل بنا</string>
+    <string name="reseved_table">للحجز</string>
+    <string name="bar_code">للشير</string>
+    <string name="menus_food">القائمة</string>
+    <string name="developed_by">طور بواسطة</string>
+    <string name="branch">الفروع</string>
+    <string name="offers_events">عروض</string>
 
-
-    <string name="small_size">SM</string>
-    <string name="medium_size">ME</string>
-    <string name="large_size">LA</string>
-    <string name="title_activity_develope_by">Developed By</string>
+    <string name="small_size">صغير</string>
+    <string name="medium_size">متوسط</string>
+    <string name="large_size">كبير</string>
+    <string name="title_activity_develope_by">طور بواسطة</string>
     <string name="company_tele">01117712 974</string>
-    <string name="company_name">Spot Inc</string>
-    <string name="company_add">Address : </string>
+    <string name="company_name">شركة سبوت</string>
+    <string name="company_add">العنوان  </string>
     <string name="company_page">www.facebook.com/mohammed.f.shawky</string>
-    <string name="facebook_page"> Facebook : </string>
-    <string name="tele_num">Telephone : </string>
+    <string name="facebook_page"> صفحةالفيس : </string>
+    <string name="tele_num">التليفون : </string>
 
-    <string name="italian_pizza">Italian Pizza</string>
-    <string name="meat_man">Meat</string>
-    <string name="chick_man">Chickens</string>
-    <string name="sea_food_man">Sea Food</string>
-    <string name="cheese_man">Cheese</string>
-    <string name="sweet_man">Sweet</string>
+    <string name="italian_pizza">بيتزا إيطالية</string>
+    <string name="meat_man">لحوم</string>
+    <string name="chick_man">دجاج</string>
+    <string name="sea_food_man">سى فود</string>
+    <string name="cheese_man">جبن</string>
+    <string name="sweet_man">حلو</string>
     <!--Grid Item-->
     <string-array name="grid_view">
         <item>@string/italian_pizza</item>
@@ -70,14 +69,14 @@
         <item>شاورما دجاج</item>
         <item>شيش طاووق</item>
         <item>سوبريم</item>
-        <item>كرانشى</item>
+       <item>كرانشى</item>
         <item>كوردن بلو</item>
-           <item>جمبرى</item>
-           <item>سيبيا</item>
-           <item>كابوريا</item>
-           <item>فياجرا مانشستر</item>
-           <item>ستافت كراست إضافة</item>
-           <item>دبل ستافت كراست إضافة</item>
+        <item>جمبرى</item>
+        <item>سيبيا</item>
+        <item>كابوريا</item>
+        <item>فياجرا مانشستر</item>
+        <item>ستافت كراست إضافة</item>
+        <item>دبل ستافت كراست إضافة</item>
     </string-array>
     <string-array name="chick_man_array">
         <item>تشكن برجر</item>

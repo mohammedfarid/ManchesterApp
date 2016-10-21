@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
@@ -20,6 +21,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -42,10 +44,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     Intent intent,intent2;
     GridView androidGridView;
-    String[] gridViewString = {
-            "Italian Pizza", "Meat Manchester", "Chickens Manchester", "Sea Food Manchester",
-            "Cheese Manchester", "Sweet Manchester"
-    } ;
+    String[] gridViewString ;
+    String [] grid = {
+            "Italian Pizza",
+            "Meat Manchester",
+            "Chickens Manchester",
+            "Sea Food Manchester",
+            "Cheese Manchester",
+            "Sweet Manchester"};;
     int[] gridViewImageId = {
             R.mipmap.ic_launcher,
             R.mipmap.ic_launcher,
@@ -60,10 +66,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_home);
+        gridViewString=getResources().getStringArray(R.array.grid_view);
+
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         //add DrawerNavigation
         navigationView = (NavigationView) findViewById(R.id.main_drawer);
         navigationView.setNavigationItemSelectedListener(this);
@@ -87,7 +96,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         intent2 = new Intent(this,LocationPlaceaActivity.class);
 
         intent = new Intent(this, MenusFoodsActivity.class);
-        CustemGridView adapterViewAndroid = new CustemGridView(HomeActivity.this, gridViewString, gridViewImageId);
+        CustemGridView adapterViewAndroid = new CustemGridView(HomeActivity.this,gridViewString, gridViewImageId);
         androidGridView=(GridView)findViewById(R.id.grid_view_image_text);
         androidGridView.setAdapter(adapterViewAndroid);
         androidGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -157,6 +166,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         if(seletedId == R.id.menus_food){
             drawerLayout.closeDrawer(GravityCompat.START);
         }
+        if(seletedId == R.id.branches){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        if(seletedId == R.id.offers_event){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
         if(seletedId == R.id.contact_us){
             intent = new Intent(this,LocationPlaceaActivity.class);
             drawerLayout.closeDrawer(GravityCompat.START);
@@ -169,13 +184,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
         if(seletedId == R.id.bar_code){
             drawerLayout.closeDrawer(GravityCompat.START);
-            try{
-                intent = new Intent(ACTION_SCAN);
-                intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intent, 0);
-            }catch (ActivityNotFoundException anfe){
 
-            }
         }
         if(seletedId == R.id.developed_by){
             intent = new Intent(this,DevelopeByActivity.class);

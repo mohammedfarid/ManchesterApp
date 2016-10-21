@@ -19,14 +19,14 @@ public class CustomListView extends BaseAdapter {
 
     private Context mContext;
     private final String[] listViewString;
-    private final int[] listViewImageId;
+    //private final int[] listViewImageId;
     private static LayoutInflater inflater=null;
 
-    public CustomListView(Context context, String[] listViewString, int[] listViewImageId) {
+    public CustomListView(Context context, String[] listViewString) {
         // TODO Auto-generated constructor stub
         this.listViewString=listViewString;
         mContext=context;
-        this.listViewImageId=listViewImageId;
+        //this.listViewImageId=listViewImageId;
         this.inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -42,8 +42,8 @@ public class CustomListView extends BaseAdapter {
     public class Holder
     {
         TextView tv;
-        ImageView img;
-        CheckBox sm,me,la;
+        //ImageView img;
+        //CheckBox sm,me,la;
     }
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
@@ -51,17 +51,18 @@ public class CustomListView extends BaseAdapter {
         View listViewAndroid;
         if (convertView==null){
             listViewAndroid = new View(mContext);
-            listViewAndroid = inflater.inflate(R.layout.program_list, null);
-            holder.tv=(TextView) listViewAndroid.findViewById(R.id.textView1);
-            holder.img=(ImageView) listViewAndroid.findViewById(R.id.imageView1);
-            holder.sm = (CheckBox) listViewAndroid.findViewById(R.id.small_size);
-            holder.me = (CheckBox) listViewAndroid.findViewById(R.id.medium_size);
-            holder.la = (CheckBox) listViewAndroid.findViewById(R.id.large_size);
-            holder.tv.setText(listViewString[position]);
-            holder.img.setImageResource(listViewImageId[position]);
+            listViewAndroid = inflater.inflate(R.layout.program_list, parent,false);
         }else{
             listViewAndroid = (View) convertView;
         }
+
+        holder.tv=(TextView) listViewAndroid.findViewById(R.id.textView1);
+        //holder.img=(ImageView) listViewAndroid.findViewById(R.id.imageView1);
+        //holder.sm = (CheckBox) listViewAndroid.findViewById(R.id.small_size);
+        //holder.me = (CheckBox) listViewAndroid.findViewById(R.id.medium_size);
+        //holder.la = (CheckBox) listViewAndroid.findViewById(R.id.large_size);
+        holder.tv.setText(listViewString[position]);
+        //holder.img.setImageResource(listViewImageId[position]);
         return listViewAndroid;
     }
 }

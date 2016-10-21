@@ -54,15 +54,15 @@ public class CustemGridView extends BaseAdapter {
         View gridViewAndroid;
         if (convertView == null) {
             gridViewAndroid = new View(mContext);
-            gridViewAndroid = inflater.inflate(R.layout.listview_with_text_image, null);
-            TextView textViewAndroid = (TextView) gridViewAndroid.findViewById(R.id.android_gridview_text);
-            ImageView imageViewAndroid = (ImageView) gridViewAndroid.findViewById(R.id.android_gridview_image);
-            textViewAndroid.setText(gridViewString[i]);
-            imageViewAndroid.setImageResource(gridViewImageId[i]);
+            gridViewAndroid = inflater.inflate(R.layout.listview_with_text_image, parent,false);
+
         } else {
             gridViewAndroid = (View) convertView;
         }
-
+        TextView textViewAndroid = (TextView) gridViewAndroid.findViewById(R.id.android_gridview_text);
+        ImageView imageViewAndroid = (ImageView) gridViewAndroid.findViewById(R.id.android_gridview_image);
+        textViewAndroid.setText(gridViewString[i]);
+        imageViewAndroid.setImageResource(gridViewImageId[i]);
         return gridViewAndroid;
     }
 }

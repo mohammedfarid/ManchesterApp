@@ -6,12 +6,18 @@
         <item android:id="@+id/menus_food"
             android:icon="@mipmap/ic_launcher"
             android:title="@string/menus_food"/>
-        <item android:id="@+id/contact_us"
+        <item android:id="@+id/branches"
             android:icon="@mipmap/ic_launcher"
-            android:title="@string/contact_us"/>
+            android:title="@string/branch"/>
         <item android:id="@+id/reseved_table"
             android:icon="@mipmap/ic_launcher"
             android:title="@string/reseved_table"/>
+        <item android:id="@+id/offers_event"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/offers_events"/>
+        <item android:id="@+id/contact_us"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/contact_us"/>
 
     </group>
     <group

@@ -55,12 +55,12 @@ public class MenusFoodsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        italianPizzaManchester = new ItalianPizzaManchester();
-        meatManchester = new MeatManchester();
-        chickensManchester = new ChickensManchester();
-        seaFoodManchester = new SeaFoodManchester();
-        cheeseManchester = new CheeseManchester();
-        sweetManchester = new SweetManchester();
+        italianPizzaManchester = new ItalianPizzaManchester(getApplicationContext());
+        meatManchester = new MeatManchester(getApplicationContext());
+        chickensManchester = new ChickensManchester(getApplicationContext());
+        seaFoodManchester = new SeaFoodManchester(getApplicationContext());
+        cheeseManchester = new CheeseManchester(getApplicationContext());
+        sweetManchester = new SweetManchester(getApplicationContext());
 
 
         getIntentFood = getIntent();
@@ -76,33 +76,33 @@ public class MenusFoodsActivity extends AppCompatActivity {
         if(italianPizza){
             title.setText(italianPizzaManchester.title);
             adapterViewAndroid = new CustomListView(MenusFoodsActivity.this,
-                    italianPizzaManchester.listViewString,italianPizzaManchester.listViewImage);
+                    italianPizzaManchester.listViewString);
 
         }
         if(meatFood){
             title.setText(meatManchester.title);
             adapterViewAndroid = new CustomListView(MenusFoodsActivity.this,
-                    meatManchester.listViewString,meatManchester.listViewImage);
+                    meatManchester.listViewString);
         }
         if(chickenFood){
             title.setText(chickensManchester.title);
             adapterViewAndroid = new CustomListView(MenusFoodsActivity.this,
-                    chickensManchester.listViewString,chickensManchester.listViewImage);
+                    chickensManchester.listViewString);
         }
         if(seaFood){
             title.setText(seaFoodManchester.title);
             adapterViewAndroid = new CustomListView(MenusFoodsActivity.this,
-                    seaFoodManchester.listViewString,seaFoodManchester.listViewImage);
+                    seaFoodManchester.listViewString);
         }
         if(cheeseFood){
             title.setText(cheeseManchester.title);
             adapterViewAndroid = new CustomListView(MenusFoodsActivity.this,
-                    cheeseManchester.listViewString,cheeseManchester.listViewImage);
+                    cheeseManchester.listViewString);
         }
         if(sweetFood){
             title.setText(sweetManchester.title);
             adapterViewAndroid = new CustomListView(MenusFoodsActivity.this,
-                    sweetManchester.listViewString,sweetManchester.listViewImage);
+                    sweetManchester.listViewString);
         }
 
         androidListView=(ListView) findViewById(R.id.listView);
