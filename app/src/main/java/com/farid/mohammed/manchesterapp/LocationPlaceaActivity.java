@@ -37,8 +37,7 @@ import java.util.zip.Inflater;
 public class LocationPlaceaActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    Button buttonCall;
-    TextView textNum;
+    Button buttonCall,sharebtn;
     private Toolbar toolbar;
     //Permision code that will be checked in the method onRequestPermissionsResult
     private int STORAGE_PERMISSION_CODE = 23;
@@ -52,6 +51,43 @@ public class LocationPlaceaActivity extends AppCompatActivity implements OnMapRe
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        sharebtn = (Button) findViewById(R.id.sharbtncenter);
+        buttonCall = (Button) findViewById(R.id.callbtncenter);
+        buttonCall.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                Toast.makeText(getApplicationContext(),"tel",Toast.LENGTH_SHORT).show();
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:01020988886"));
+                try{
+                    startActivity(callIntent);
+                } catch (Exception e){
+
+                }
+
+            }
+
+        });
+        sharebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String strUri = "http://maps.google.com/maps?&q=loc:" + "31.083202" + "," + "31.491318" +"&z=16&ll=31.083202+31.491318"+ " (" + "Manchester Resturant" + ")";
+                String URLL ="http://maps.google.com/maps?&z=15&q=31.083202+31.491318&ll=31.083202+31.491318";
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                //sharingIntent.setType("image/jpeg");
+
+
+                //sharingIntent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+
+                String ShareSub = "Here is cafe location";
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, ShareSub);
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, strUri);
+                startActivity(Intent.createChooser(sharingIntent, "Share via"));
+            }
+        });
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
@@ -68,26 +104,7 @@ public class LocationPlaceaActivity extends AppCompatActivity implements OnMapRe
         //If the app has not the permission then asking for the permission
         requestStoragePermission();
 
-        buttonCall = (Button) findViewById(R.id.caffeeCall);
-        textNum = (TextView) findViewById(R.id.caffeeNum);
 
-        // add button listener
-        buttonCall.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                Toast.makeText(getApplicationContext(),textNum.getText().toString(),Toast.LENGTH_SHORT).show();
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:"+textNum.getText().toString()));
-               try{
-                   startActivity(callIntent);
-               } catch (Exception e){
-
-               }
-
-            }
-
-        });
 
     }
 
@@ -168,7 +185,7 @@ public class LocationPlaceaActivity extends AppCompatActivity implements OnMapRe
                     // Add data to the intent, the receiving app will decide
                     // what to do with it.
                     share.putExtra(Intent.EXTRA_SUBJECT, "Title Of The Post");
-                    share.putExtra(Intent.EXTRA_TEXT, "http://www.codeofaninja.com");
+                    share.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.textwatch.egypt&hl=en");
 
                     startActivity(Intent.createChooser(share, "Share link!"));
                     break;

@@ -5,13 +5,27 @@
     <string name="caffeeName">مانشستر كافيه</string>
     <string name="caffeeNum">01020988886</string>
     <string name="caffeePage">www.facebook.com/manchestermasr</string>
-    <string name="callCafe">إتصال</string>
+    <string name="call">إتصال</string>
     <string name="title_activity_home_menu">HomeMenuActivity</string>
+    <string name="small_size">صغير</string>
+    <string name="medium_size">متوسط</string>
+    <string name="large_size">كبير</string>
+    <string name="title_activity_develope_by">طور بواسطة</string>
+    <string name="company_tele">01117712 974</string>
+    <string name="company_name">تطبيقات سبوت</string>
+    <string name="company_add">العنوان  </string>
+    <string name="company_page">www.facebook.com/mohammed.f.shawky</string>
+    <string name="facebook_page"> صفحةالفيس : </string>
+    <string name="tele_num">التليفون : </string>
+    <string name="first_branch">فرع شربين :</string>
+    <string name="time_work_first_branch">مواعيد العمل :</string>
+
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="share_app">شاركه مع أصدقائك</string>
 
     <!-- Remove or change this placeholder text -->
     <string name="drawer_open">OPEN</string>
@@ -25,16 +39,7 @@
     <string name="branch">الفروع</string>
     <string name="offers_events">عروض</string>
 
-    <string name="small_size">صغير</string>
-    <string name="medium_size">متوسط</string>
-    <string name="large_size">كبير</string>
-    <string name="title_activity_develope_by">طور بواسطة</string>
-    <string name="company_tele">01117712 974</string>
-    <string name="company_name">شركة سبوت</string>
-    <string name="company_add">العنوان  </string>
-    <string name="company_page">www.facebook.com/mohammed.f.shawky</string>
-    <string name="facebook_page"> صفحةالفيس : </string>
-    <string name="tele_num">التليفون : </string>
+
 
     <string name="italian_pizza">بيتزا إيطالية</string>
     <string name="meat_man">لحوم</string>

@@ -29,6 +29,8 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import java.util.Locale;
+
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private static final String SELECT_ITEM_ID = "selected";
@@ -167,24 +169,27 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             drawerLayout.closeDrawer(GravityCompat.START);
         }
         if(seletedId == R.id.branches){
+            intent = new Intent(this,LocationPlaceaActivity.class);
             drawerLayout.closeDrawer(GravityCompat.START);
+            startActivity(intent);
         }
         if(seletedId == R.id.offers_event){
             drawerLayout.closeDrawer(GravityCompat.START);
         }
         if(seletedId == R.id.contact_us){
-            intent = new Intent(this,LocationPlaceaActivity.class);
+            intent = new Intent(this,ConatctUsActivity.class);
             drawerLayout.closeDrawer(GravityCompat.START);
             startActivity(intent);
         }
         if(seletedId == R.id.reseved_table){
-            intent = new Intent(this,LocationPlaceaActivity.class);
+            intent = new Intent(this,ReserveTableActivity.class);
             drawerLayout.closeDrawer(GravityCompat.START);
             startActivity(intent);
         }
         if(seletedId == R.id.bar_code){
+            intent = new Intent(this,ShareActivity.class);
             drawerLayout.closeDrawer(GravityCompat.START);
-
+            startActivity(intent);
         }
         if(seletedId == R.id.developed_by){
             intent = new Intent(this,DevelopeByActivity.class);
@@ -262,6 +267,26 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         try {
             switch (item.getItemId()) {
+                case R.id.activity_lang_en:
+                    Locale locale = new Locale("en");
+                    Locale.setDefault(locale);
+                    android.content.res.Configuration configEn = new android.content.res.Configuration();
+                    configEn.locale = locale;
+                    getBaseContext().getResources().updateConfiguration(configEn, getBaseContext().getResources().getDisplayMetrics());
+                    Intent intent = new Intent(this,HomeActivity.class);
+                    startActivity(intent);
+                    finish();
+                    break;
+                case R.id.activity_lang_ar:
+                    Locale localear = new Locale("ar");
+                    Locale.setDefault(localear);
+                    android.content.res.Configuration configAr = new android.content.res.Configuration();
+                    configAr.locale = localear;
+                    getBaseContext().getResources().updateConfiguration(configAr, getBaseContext().getResources().getDisplayMetrics());
+                    Intent intentAr = new Intent(this,HomeActivity.class);
+                    startActivity(intentAr);
+                    finish();
+                    break;
                 case R.id.activity_share:
                     Toast.makeText(getApplicationContext(),"share",Toast.LENGTH_SHORT).show();
                     Intent share = new Intent(android.content.Intent.ACTION_SEND);
@@ -271,7 +296,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     // Add data to the intent, the receiving app will decide
                     // what to do with it.
                     share.putExtra(Intent.EXTRA_SUBJECT, "Title Of The Post");
-                    share.putExtra(Intent.EXTRA_TEXT, "http://www.codeofaninja.com");
+                    share.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.textwatch.egypt&hl=en");
 
                     startActivity(Intent.createChooser(share, "Share link!"));
                     break;

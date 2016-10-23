@@ -4,6 +4,7 @@ import android.*;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
@@ -14,6 +15,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -24,9 +28,10 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class DevelopeByActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class DevelopeByActivity extends AppCompatActivity {
 
-    private GoogleMap mMap;
+    Button callbtn,facebtn,webbtn,sendbtn;
+    TextView textNum;
     private Toolbar toolbar;
     //Permision code that will be checked in the method onRequestPermissionsResult
     private int STORAGE_PERMISSION_CODE = 23;
@@ -35,14 +40,48 @@ public class DevelopeByActivity extends AppCompatActivity implements OnMapReadyC
         super.onCreate(savedInstanceState);
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_develope_by);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+
+        callbtn = (Button) findViewById(R.id.callbtn);
+        facebtn = (Button) findViewById(R.id.facebtn);
+        webbtn = (Button) findViewById(R.id.webbtn);
+        sendbtn = (Button) findViewById(R.id.emailbtn);
+       // textNum = (TextView) findViewById(R.id.textTelee);
+
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        callbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:01117712974"));
+                try{
+                    startActivity(callIntent);
+                } catch (Exception e){
+
+                }
+            }
+        });
+        facebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        webbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        sendbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         if(isReadStorageAllowed()){
             //If permission is already having then showing the toast
             Toast.makeText(DevelopeByActivity.this,"You already have the permission",Toast.LENGTH_LONG).show();
@@ -56,9 +95,7 @@ public class DevelopeByActivity extends AppCompatActivity implements OnMapReadyC
     //We are calling this method to check the permission status
     private boolean isReadStorageAllowed() {
         //Getting the permission status
-        int result = ContextCompat.checkSelfPermission(this,
-                android.Manifest.permission.WRITE_EXTERNAL_STORAGE)+
-                ContextCompat.checkSelfPermission(this,
+        int result =ContextCompat.checkSelfPermission(this,
                         android.Manifest.permission.CALL_PHONE);
 
         //If permission is granted returning true
@@ -73,8 +110,6 @@ public class DevelopeByActivity extends AppCompatActivity implements OnMapReadyC
     private void requestStoragePermission(){
 
         if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                android.Manifest.permission.WRITE_EXTERNAL_STORAGE)||
-                ActivityCompat.shouldShowRequestPermissionRationale(this,
                         android.Manifest.permission.CALL_PHONE)){
             //If the user has denied the permission previously your code will come to this block
             //Here you can explain why you need this permission
@@ -82,8 +117,7 @@ public class DevelopeByActivity extends AppCompatActivity implements OnMapReadyC
         }
 
         //And finally ask for the permission
-        ActivityCompat.requestPermissions(this,new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        android.Manifest.permission.CALL_PHONE}
+        ActivityCompat.requestPermissions(this,new String[]{android.Manifest.permission.CALL_PHONE}
                 ,STORAGE_PERMISSION_CODE);
     }
 
@@ -130,7 +164,7 @@ public class DevelopeByActivity extends AppCompatActivity implements OnMapReadyC
                     // Add data to the intent, the receiving app will decide
                     // what to do with it.
                     share.putExtra(Intent.EXTRA_SUBJECT, "Title Of The Post");
-                    share.putExtra(Intent.EXTRA_TEXT, "http://www.codeofaninja.com");
+                    share.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.textwatch.egypt&hl=en");
 
                     startActivity(Intent.createChooser(share, "Share link!"));
                     break;
@@ -143,26 +177,5 @@ public class DevelopeByActivity extends AppCompatActivity implements OnMapReadyC
         return true;
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng spot = new LatLng(31.083202, 31.491318);
-        mMap.addMarker(new MarkerOptions()
-                .position(spot)
-                .title("Spot Inc Company")
-                .snippet("For Mobile App")
-                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_company_logo)));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(spot,15));
-    }
 }

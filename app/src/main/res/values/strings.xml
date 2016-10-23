@@ -5,13 +5,26 @@
     <string name="caffeeName">Manchester Cafe</string>
     <string name="caffeeNum">01020988886</string>
     <string name="caffeePage">www.facebook.com/manchestermasr</string>
-    <string name="callCafe">Call</string>
+    <string name="call">Call</string>
     <string name="title_activity_home_menu">HomeMenuActivity</string>
+    <string name="small_size">SM</string>
+    <string name="medium_size">ME</string>
+    <string name="large_size">LA</string>
+    <string name="title_activity_develope_by">Developed By</string>
+    <string name="company_tele">01117712 974</string>
+    <string name="company_name">Spot Application</string>
+    <string name="company_add">Address : </string>
+    <string name="company_page">www.facebook.com/mohammed.f.shawky</string>
+    <string name="facebook_page"> Facebook : </string>
+    <string name="tele_num">Telephone : </string>
+    <string name="first_branch">Branch Sherbien :</string>
+    <string name="time_work_first_branch">Time of work :</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="share_app">Share With Friends</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="drawer_open">OPEN</string>
@@ -25,17 +38,6 @@
     <string name="branch">Branches</string>
     <string name="offers_events">Offer / Events</string>
 
-
-    <string name="small_size">SM</string>
-    <string name="medium_size">ME</string>
-    <string name="large_size">LA</string>
-    <string name="title_activity_develope_by">Developed By</string>
-    <string name="company_tele">01117712 974</string>
-    <string name="company_name">Spot Inc</string>
-    <string name="company_add">Address : </string>
-    <string name="company_page">www.facebook.com/mohammed.f.shawky</string>
-    <string name="facebook_page"> Facebook : </string>
-    <string name="tele_num">Telephone : </string>
 
     <string name="italian_pizza">Italian Pizza</string>
     <string name="meat_man">Meat</string>
@@ -72,12 +74,12 @@
         <item>سوبريم</item>
         <item>كرانشى</item>
         <item>كوردن بلو</item>
-           <item>جمبرى</item>
-           <item>سيبيا</item>
-           <item>كابوريا</item>
-           <item>فياجرا مانشستر</item>
-           <item>ستافت كراست إضافة</item>
-           <item>دبل ستافت كراست إضافة</item>
+        <item>جمبرى</item>
+        <item>سيبيا</item>
+        <item>كابوريا</item>
+        <item>فياجرا مانشستر</item>
+        <item>ستافت كراست إضافة</item>
+        <item>دبل ستافت كراست إضافة</item>
     </string-array>
     <string-array name="chick_man_array">
         <item>تشكن برجر</item>

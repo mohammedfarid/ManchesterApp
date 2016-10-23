@@ -140,7 +140,7 @@ public class MenusFoodsActivity extends AppCompatActivity {
                     // Add data to the intent, the receiving app will decide
                     // what to do with it.
                     share.putExtra(Intent.EXTRA_SUBJECT, "Title Of The Post");
-                    share.putExtra(Intent.EXTRA_TEXT, "http://www.codeofaninja.com");
+                    share.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.textwatch.egypt&hl=en");
 
                     startActivity(Intent.createChooser(share, "Share link!"));
                     break;
