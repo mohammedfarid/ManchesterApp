@@ -13,12 +13,17 @@
     <string name="title_activity_develope_by">طور بواسطة</string>
     <string name="company_tele">01117712 974</string>
     <string name="company_name">تطبيقات سبوت</string>
-    <string name="company_add">العنوان  </string>
+    <string name="company_add">العنوان : </string>
     <string name="company_page">www.facebook.com/mohammed.f.shawky</string>
     <string name="facebook_page"> صفحةالفيس : </string>
+    <string name="facebook_pagebtn"> صفحةالفيس</string>
     <string name="tele_num">التليفون : </string>
     <string name="first_branch">فرع شربين :</string>
     <string name="time_work_first_branch">مواعيد العمل :</string>
+    <string name="website">الموقع :</string>
+    <string name="websitebtn">الموقع</string>
+    <string name="email">الإيميل :</string>
+    <string name="emailbtn">الإيميل</string>
 
     <string name="lang">اللغة</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -33,7 +38,7 @@
     <!--Meuns navigation-->
     <string name="contact_us">إتصل بنا</string>
     <string name="reseved_table">للحجز</string>
-    <string name="bar_code">للشير</string>
+    <string name="bar_code">للنشر</string>
     <string name="menus_food">القائمة</string>
     <string name="developed_by">طور بواسطة</string>
     <string name="branch">الفروع</string>

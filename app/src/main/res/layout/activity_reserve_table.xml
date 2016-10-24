@@ -22,10 +22,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_margin="@dimen/activity_horizontal_margin"
         android:text="@string/first_branch"
         android:textSize="20dp"
         android:textColor="@color/white"
-        android:gravity="center"/>
+        android:gravity="left|center"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"

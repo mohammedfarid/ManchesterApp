@@ -16,10 +16,15 @@
     <string name="company_add">Address : </string>
     <string name="company_page">www.facebook.com/mohammed.f.shawky</string>
     <string name="facebook_page"> Facebook : </string>
+    <string name="facebook_pagebtn">Facebook</string>
     <string name="tele_num">Telephone : </string>
     <string name="first_branch">Branch Sherbien :</string>
     <string name="time_work_first_branch">Time of work :</string>
     <string name="lang">Language</string>
+    <string name="website">Website :</string>
+    <string name="websitebtn">Website</string>
+    <string name="email">Email :</string>
+    <string name="emailbtn">Email</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
