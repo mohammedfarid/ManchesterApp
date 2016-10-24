@@ -19,6 +19,7 @@
     <string name="tele_num">Telephone : </string>
     <string name="first_branch">Branch Sherbien :</string>
     <string name="time_work_first_branch">Time of work :</string>
+    <string name="lang">Language</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

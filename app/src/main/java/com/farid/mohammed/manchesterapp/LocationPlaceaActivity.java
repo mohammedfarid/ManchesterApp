@@ -91,6 +91,7 @@ public class LocationPlaceaActivity extends AppCompatActivity implements OnMapRe
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(R.string.app_name);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -166,6 +167,8 @@ public class LocationPlaceaActivity extends AppCompatActivity implements OnMapRe
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         // Configure the search info and add any event listeners...
+        MenuItem item = menu.findItem(R.id.activity_lang);
+        item.setVisible(false);
         return super.onCreateOptionsMenu(menu);
     }
     @Override

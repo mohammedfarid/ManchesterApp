@@ -1,27 +1,19 @@
 package com.farid.mohammed.manchesterapp;
 
-import android.*;
-import android.Manifest;
-import android.content.ActivityNotFoundException;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,19 +33,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private int seletedId;
     private  boolean userSawDrawer = false;
-
-    static final String ACTION_SCAN = "com.google.zxing.client.android.SCAN";
+    Locale locale;
+    String lang;
 
     Intent intent,intent2;
     GridView androidGridView;
     String[] gridViewString ;
-    String [] grid = {
-            "Italian Pizza",
-            "Meat Manchester",
-            "Chickens Manchester",
-            "Sea Food Manchester",
-            "Cheese Manchester",
-            "Sweet Manchester"};;
     int[] gridViewImageId = {
             R.mipmap.ic_launcher,
             R.mipmap.ic_launcher,
@@ -69,10 +54,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_home);
         gridViewString=getResources().getStringArray(R.array.grid_view);
-
-
+        lang= Locale.getDefault().toString().toLowerCase();
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(R.string.app_name);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         //add DrawerNavigation
@@ -267,24 +252,19 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         try {
             switch (item.getItemId()) {
-                case R.id.activity_lang_en:
-                    Locale locale = new Locale("en");
-                    Locale.setDefault(locale);
-                    android.content.res.Configuration configEn = new android.content.res.Configuration();
-                    configEn.locale = locale;
-                    getBaseContext().getResources().updateConfiguration(configEn, getBaseContext().getResources().getDisplayMetrics());
+                case R.id.activity_lang:
+                    Toast.makeText(getApplicationContext(),lang,Toast.LENGTH_SHORT).show();
+                    if(lang.equals("en_us")||lang.equals("en")){
+                        locale = new Locale("ar");
+                    }else{
+                        locale = new Locale("en");
+                    }
+                    locale.setDefault(locale);
+                    android.content.res.Configuration config = new android.content.res.Configuration();
+                    config.locale = locale;
+                    getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
                     Intent intent = new Intent(this,HomeActivity.class);
                     startActivity(intent);
-                    finish();
-                    break;
-                case R.id.activity_lang_ar:
-                    Locale localear = new Locale("ar");
-                    Locale.setDefault(localear);
-                    android.content.res.Configuration configAr = new android.content.res.Configuration();
-                    configAr.locale = localear;
-                    getBaseContext().getResources().updateConfiguration(configAr, getBaseContext().getResources().getDisplayMetrics());
-                    Intent intentAr = new Intent(this,HomeActivity.class);
-                    startActivity(intentAr);
                     finish();
                     break;
                 case R.id.activity_share:
@@ -304,7 +284,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     return super.onOptionsItemSelected(item);
             }
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
         return true;
     }

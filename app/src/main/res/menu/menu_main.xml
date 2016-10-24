@@ -9,18 +9,11 @@
         app:showAsAction="always">
 
     </item>
-    <item android:id="@+id/activity_lang_en"
-        android:orderInCategory="100"
-        android:title="En"
-        app:showAsAction="always">
 
-    </item>
-
-    <item android:id="@+id/activity_lang_ar"
-        android:orderInCategory="100"
-        android:title="AR"
-        app:showAsAction="always">
-
+    <item android:id="@+id/activity_lang"
+        android:orderInCategory="300"
+        android:title="@string/lang"
+        app:showAsAction = "always">
     </item>
 
 </menu>
