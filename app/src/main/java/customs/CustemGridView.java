@@ -1,4 +1,4 @@
-package com.farid.mohammed.manchesterapp;
+package customs;
 
 import android.widget.ArrayAdapter;
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.ViewGroup;
 import android.view.View;
+
+import com.farid.mohammed.manchesterapp.R;
+
 import java.util.ArrayList;
 import java.util.List;
 

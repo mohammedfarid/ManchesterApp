@@ -1,4 +1,4 @@
-package com.farid.mohammed.manchesterapp;
+package customs;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,8 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.farid.mohammed.manchesterapp.R;
 
 /**
  * Created by Mohammed on 04/10/2016.
