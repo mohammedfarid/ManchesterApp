@@ -13,4 +13,10 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+    <style name="Theme.App.AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">#f00</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:background">#737373</item>
+        <item name="windowNoTitle">false</item> <!-- that's the important bit -->
+    </style>
 </resources>

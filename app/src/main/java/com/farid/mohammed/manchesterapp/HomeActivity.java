@@ -28,19 +28,19 @@ import customs.CustemGridView;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private static final String SELECT_ITEM_ID = "selected";
-    private static final String FIRST_TIME ="firstTime" ;
+    private static final String FIRST_TIME = "firstTime";
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private int seletedId;
-    private  boolean userSawDrawer = false;
+    private boolean userSawDrawer = false;
     Locale locale;
     String lang;
 
-    Intent intent,intent2;
+    Intent intent, intent2;
     GridView androidGridView;
-    String[] gridViewString ;
+    String[] gridViewString;
     int[] gridViewImageId = {
             R.mipmap.ic_launcher,
             R.mipmap.ic_launcher,
@@ -53,10 +53,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_home);
-        gridViewString=getResources().getStringArray(R.array.grid_view);
-        lang= Locale.getDefault().toString().toLowerCase();
+        gridViewString = getResources().getStringArray(R.array.grid_view);
+        lang = Locale.getDefault().toString().toLowerCase();
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.app_name);
@@ -67,26 +67,26 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this
-                ,drawerLayout
-                ,toolbar
-                ,R.string.drawer_open
-                ,R.string.drawer_close);
+                , drawerLayout
+                , toolbar
+                , R.string.drawer_open
+                , R.string.drawer_close);
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
-        if(!didUserSeeDrawer()){
+        if (!didUserSeeDrawer()) {
             showDrawer();
             markeDrawerSeen();
-        }else {
+        } else {
             hideDrawer();
         }
         seletedId = savedInstanceState == null ? R.id.menus_food : savedInstanceState.getInt(SELECT_ITEM_ID);
         navigated(seletedId);
 
-        intent2 = new Intent(this,LocationPlaceaActivity.class);
+        intent2 = new Intent(this, LocationPlaceaActivity.class);
 
         intent = new Intent(this, MenusFoodsActivity.class);
-        CustemGridView adapterViewAndroid = new CustemGridView(HomeActivity.this,gridViewString, gridViewImageId);
-        androidGridView=(GridView)findViewById(R.id.grid_view_image_text);
+        CustemGridView adapterViewAndroid = new CustemGridView(HomeActivity.this, gridViewString, gridViewImageId);
+        androidGridView = (GridView) findViewById(R.id.grid_view_image_text);
         androidGridView.setAdapter(adapterViewAndroid);
         androidGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -94,55 +94,55 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             public void onItemClick(AdapterView<?> parent, View view,
                                     int i, long id) {
                 // ListView Clicked item index
-                int itemPosition     = i;
+                int itemPosition = i;
                 //or other way
-                if (itemPosition == 0){
-                    intent.putExtra("Italian_Pizza",true);
-                    intent.putExtra("Meat_Food",false);
-                    intent.putExtra("Chicken_Food",false);
-                    intent.putExtra("Sea_Food",false);
-                    intent.putExtra("Cheese_Food",false);
-                    intent.putExtra("Sweet_Food",false);
+                if (itemPosition == 0) {
+                    intent.putExtra("Italian_Pizza", true);
+                    intent.putExtra("Meat_Food", false);
+                    intent.putExtra("Chicken_Food", false);
+                    intent.putExtra("Sea_Food", false);
+                    intent.putExtra("Cheese_Food", false);
+                    intent.putExtra("Sweet_Food", false);
                     startActivity(intent);
-                }else if(itemPosition == 1){
-                    intent.putExtra("Italian_Pizza",false);
-                    intent.putExtra("Meat_Food",true);
-                    intent.putExtra("Chicken_Food",false);
-                    intent.putExtra("Sea_Food",false);
-                    intent.putExtra("Cheese_Food",false);
-                    intent.putExtra("Sweet_Food",false);
+                } else if (itemPosition == 1) {
+                    intent.putExtra("Italian_Pizza", false);
+                    intent.putExtra("Meat_Food", true);
+                    intent.putExtra("Chicken_Food", false);
+                    intent.putExtra("Sea_Food", false);
+                    intent.putExtra("Cheese_Food", false);
+                    intent.putExtra("Sweet_Food", false);
                     startActivity(intent);
-                }else if(itemPosition == 2){
-                    intent.putExtra("Italian_Pizza",false);
-                    intent.putExtra("Meat_Food",false);
-                    intent.putExtra("Chicken_Food",true);
-                    intent.putExtra("Sea_Food",false);
-                    intent.putExtra("Cheese_Food",false);
-                    intent.putExtra("Sweet_Food",false);
+                } else if (itemPosition == 2) {
+                    intent.putExtra("Italian_Pizza", false);
+                    intent.putExtra("Meat_Food", false);
+                    intent.putExtra("Chicken_Food", true);
+                    intent.putExtra("Sea_Food", false);
+                    intent.putExtra("Cheese_Food", false);
+                    intent.putExtra("Sweet_Food", false);
                     startActivity(intent);
-                }else if(itemPosition == 3){
-                    intent.putExtra("Italian_Pizza",false);
-                    intent.putExtra("Meat_Food",false);
-                    intent.putExtra("Chicken_Food",false);
-                    intent.putExtra("Sea_Food",true);
-                    intent.putExtra("Cheese_Food",false);
-                    intent.putExtra("Sweet_Food",false);
+                } else if (itemPosition == 3) {
+                    intent.putExtra("Italian_Pizza", false);
+                    intent.putExtra("Meat_Food", false);
+                    intent.putExtra("Chicken_Food", false);
+                    intent.putExtra("Sea_Food", true);
+                    intent.putExtra("Cheese_Food", false);
+                    intent.putExtra("Sweet_Food", false);
                     startActivity(intent);
-                }else if(itemPosition == 4){
-                    intent.putExtra("Italian_Pizza",false);
-                    intent.putExtra("Meat_Food",false);
-                    intent.putExtra("Chicken_Food",false);
-                    intent.putExtra("Sea_Food",false);
-                    intent.putExtra("Cheese_Food",true);
-                    intent.putExtra("Sweet_Food",false);
+                } else if (itemPosition == 4) {
+                    intent.putExtra("Italian_Pizza", false);
+                    intent.putExtra("Meat_Food", false);
+                    intent.putExtra("Chicken_Food", false);
+                    intent.putExtra("Sea_Food", false);
+                    intent.putExtra("Cheese_Food", true);
+                    intent.putExtra("Sweet_Food", false);
                     startActivity(intent);
-                }else if(itemPosition == 5){
-                    intent.putExtra("Italian_Pizza",false);
-                    intent.putExtra("Meat_Food",false);
-                    intent.putExtra("Chicken_Food",false);
-                    intent.putExtra("Sea_Food",false);
-                    intent.putExtra("Cheese_Food",false);
-                    intent.putExtra("Sweet_Food",true);
+                } else if (itemPosition == 5) {
+                    intent.putExtra("Italian_Pizza", false);
+                    intent.putExtra("Meat_Food", false);
+                    intent.putExtra("Chicken_Food", false);
+                    intent.putExtra("Sea_Food", false);
+                    intent.putExtra("Cheese_Food", false);
+                    intent.putExtra("Sweet_Food", true);
                     startActivity(intent);
                 }
             }
@@ -152,52 +152,56 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     private void navigated(int seletedId) {
         Intent intent = null;
-        if(seletedId == R.id.menus_food){
+        if (seletedId == R.id.menus_food) {
             drawerLayout.closeDrawer(GravityCompat.START);
         }
-        if(seletedId == R.id.branches){
-            intent = new Intent(this,LocationPlaceaActivity.class);
-            drawerLayout.closeDrawer(GravityCompat.START);
-            startActivity(intent);
-        }
-        if(seletedId == R.id.offers_event){
-            drawerLayout.closeDrawer(GravityCompat.START);
-        }
-        if(seletedId == R.id.contact_us){
-            intent = new Intent(this,ConatctUsActivity.class);
+        if (seletedId == R.id.branches) {
+            intent = new Intent(this, LocationPlaceaActivity.class);
             drawerLayout.closeDrawer(GravityCompat.START);
             startActivity(intent);
         }
-        if(seletedId == R.id.reseved_table){
-            intent = new Intent(this,ReserveTableActivity.class);
+        if (seletedId == R.id.offers_event) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        if (seletedId == R.id.contact_us) {
+            intent = new Intent(this, ConatctUsActivity.class);
             drawerLayout.closeDrawer(GravityCompat.START);
             startActivity(intent);
         }
-        if(seletedId == R.id.bar_code){
-            intent = new Intent(this,ShareActivity.class);
+        if (seletedId == R.id.reseved_table) {
+            intent = new Intent(this, ReserveTableActivity.class);
             drawerLayout.closeDrawer(GravityCompat.START);
             startActivity(intent);
         }
-        if(seletedId == R.id.developed_by){
-            intent = new Intent(this,DevelopeByActivity.class);
+        if (seletedId == R.id.bar_code) {
+            intent = new Intent(this, ShareActivity.class);
+            drawerLayout.closeDrawer(GravityCompat.START);
+            startActivity(intent);
+        }
+        if (seletedId == R.id.developed_by) {
+            intent = new Intent(this, DevelopeByActivity.class);
             drawerLayout.closeDrawer(GravityCompat.START);
             startActivity(intent);
         }
     }
-    private boolean didUserSeeDrawer(){
+
+    private boolean didUserSeeDrawer() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        userSawDrawer=sharedPreferences.getBoolean(FIRST_TIME,false);
+        userSawDrawer = sharedPreferences.getBoolean(FIRST_TIME, false);
         return userSawDrawer;
     }
-    private void markeDrawerSeen(){
+
+    private void markeDrawerSeen() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        userSawDrawer =true;
-        sharedPreferences.edit().putBoolean(FIRST_TIME,userSawDrawer).apply();
+        userSawDrawer = true;
+        sharedPreferences.edit().putBoolean(FIRST_TIME, userSawDrawer).apply();
     }
-    private void showDrawer(){
+
+    private void showDrawer() {
         drawerLayout.openDrawer(GravityCompat.START);
     }
-    private void hideDrawer(){
+
+    private void hideDrawer() {
         drawerLayout.closeDrawer(GravityCompat.START);
     }
 
@@ -219,17 +223,18 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt(SELECT_ITEM_ID,seletedId);
+        outState.putInt(SELECT_ITEM_ID, seletedId);
     }
 
     @Override
     public void onBackPressed() {
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        }else{
+        } else {
             super.onBackPressed();
         }
     }
+
     //on ActivityResult method
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (requestCode == 0) {
@@ -255,22 +260,22 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         try {
             switch (item.getItemId()) {
                 case R.id.activity_lang:
-                    Toast.makeText(getApplicationContext(),lang,Toast.LENGTH_SHORT).show();
-                    if(lang.equals("en_us")||lang.equals("en")){
+                    Toast.makeText(getApplicationContext(), lang, Toast.LENGTH_SHORT).show();
+                    if (lang.equals("en_us") || lang.equals("en")) {
                         locale = new Locale("ar");
-                    }else{
+                    } else {
                         locale = new Locale("en");
                     }
                     locale.setDefault(locale);
                     android.content.res.Configuration config = new android.content.res.Configuration();
                     config.locale = locale;
                     getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-                    Intent intent = new Intent(this,HomeActivity.class);
+                    Intent intent = new Intent(this, HomeActivity.class);
                     startActivity(intent);
                     finish();
                     break;
                 case R.id.activity_share:
-                    Toast.makeText(getApplicationContext(),"share",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "share", Toast.LENGTH_SHORT).show();
                     Intent share = new Intent(android.content.Intent.ACTION_SEND);
                     share.setType("text/plain");
                     share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);

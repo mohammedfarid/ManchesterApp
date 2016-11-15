@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class ShareActivity extends AppCompatActivity {
     private Toolbar toolbar;
     Button btnShare;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +30,7 @@ public class ShareActivity extends AppCompatActivity {
         btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"share",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "share", Toast.LENGTH_SHORT).show();
                 Intent share = new Intent(android.content.Intent.ACTION_SEND);
                 share.setType("text/plain");
                 share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
@@ -43,6 +44,7 @@ public class ShareActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -51,16 +53,17 @@ public class ShareActivity extends AppCompatActivity {
         item.setVisible(false);
         return super.onCreateOptionsMenu(menu);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         try {
             switch (item.getItemId()) {
                 case android.R.id.home:
-                    Toast.makeText(getApplicationContext(),"actionSetting",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "actionSetting", Toast.LENGTH_SHORT).show();
                     NavUtils.navigateUpFromSameTask(this);
                     break;
                 case R.id.activity_share:
-                    Toast.makeText(getApplicationContext(),"share",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "share", Toast.LENGTH_SHORT).show();
                     Intent share = new Intent(android.content.Intent.ACTION_SEND);
                     share.setType("text/plain");
                     share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);

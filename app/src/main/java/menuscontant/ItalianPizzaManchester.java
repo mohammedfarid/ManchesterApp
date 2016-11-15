@@ -9,10 +9,16 @@ import com.farid.mohammed.manchesterapp.R;
  */
 
 public class ItalianPizzaManchester {
-    public String title ;
-    public String [] listViewString;
-    public ItalianPizzaManchester(Context context){
+    public String title;
+    public String[] listViewString;
+    public int image = R.mipmap.ic_launcher;
+    public int[] laPrice = {20, 24, 33, 11, 22};
+    public int[] mePrice = {20, 24, 22, 11, 22};
+    public int[] smPrice = {20, 24, 11, 11, 22};
+
+    public ItalianPizzaManchester(Context context) {
         this.title = context.getResources().getString(R.string.italian_pizza);
         this.listViewString = context.getResources().getStringArray(R.array.italian_pizza_array);
+
     }
 }

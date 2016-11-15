@@ -45,7 +45,6 @@
     <string name="offers_events">عروض</string>
 
 
-
     <string name="italian_pizza">بيتزا إيطالية</string>
     <string name="meat_man">لحوم</string>
     <string name="chick_man">دجاج</string>
@@ -79,7 +78,7 @@
         <item>شاورما دجاج</item>
         <item>شيش طاووق</item>
         <item>سوبريم</item>
-       <item>كرانشى</item>
+        <item>كرانشى</item>
         <item>كوردن بلو</item>
         <item>جمبرى</item>
         <item>سيبيا</item>

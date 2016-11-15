@@ -14,11 +14,12 @@ import android.widget.Toast;
 
 public class ConatctUsActivity extends AppCompatActivity {
     private Toolbar toolbar;
-    Button facebtn,webbtn,emailbtn;
+    Button facebtn, webbtn, emailbtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_conatct_us);
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
@@ -26,8 +27,8 @@ public class ConatctUsActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         facebtn = (Button) findViewById(R.id.facebtn);
-        webbtn= (Button)findViewById(R.id.webbtn);
-        emailbtn = (Button)findViewById(R.id.emailbtn);
+        webbtn = (Button) findViewById(R.id.webbtn);
+        emailbtn = (Button) findViewById(R.id.emailbtn);
 
         facebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +49,7 @@ public class ConatctUsActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -62,11 +64,11 @@ public class ConatctUsActivity extends AppCompatActivity {
         try {
             switch (item.getItemId()) {
                 case android.R.id.home:
-                    Toast.makeText(getApplicationContext(),"actionSetting",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "actionSetting", Toast.LENGTH_SHORT).show();
                     NavUtils.navigateUpFromSameTask(this);
                     break;
                 case R.id.activity_share:
-                    Toast.makeText(getApplicationContext(),"share",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "share", Toast.LENGTH_SHORT).show();
                     Intent share = new Intent(android.content.Intent.ACTION_SEND);
                     share.setType("text/plain");
                     share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);

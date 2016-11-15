@@ -22,13 +22,13 @@ public class CustemGridView extends BaseAdapter {
     private Context mContext;
     private final String[] gridViewString;
     private final int[] gridViewImageId;
-    private static LayoutInflater inflater=null;
+    private static LayoutInflater inflater = null;
 
     public CustemGridView(Context context, String[] gridViewString, int[] gridViewImageId) {
         mContext = context;
         this.gridViewImageId = gridViewImageId;
         this.gridViewString = gridViewString;
-        this.inflater = ( LayoutInflater )context.
+        this.inflater = (LayoutInflater) context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -46,8 +46,8 @@ public class CustemGridView extends BaseAdapter {
     public long getItemId(int i) {
         return i;
     }
-    public class Holder
-    {
+
+    public class Holder {
         TextView tv;
         ImageView img;
     }
@@ -57,7 +57,7 @@ public class CustemGridView extends BaseAdapter {
         View gridViewAndroid;
         if (convertView == null) {
             gridViewAndroid = new View(mContext);
-            gridViewAndroid = inflater.inflate(R.layout.listview_with_text_image, parent,false);
+            gridViewAndroid = inflater.inflate(R.layout.listview_with_text_image, parent, false);
 
         } else {
             gridViewAndroid = (View) convertView;

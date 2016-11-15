@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal" >
+    android:orientation="horizontal">
 
-    <!--<ImageView
+    <ImageView
         android:id="@+id/imageView1"
         android:layout_gravity="center"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:src="@mipmap/ic_launcher" />-->
+        android:src="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/textView1"
@@ -18,24 +18,7 @@
         android:layout_height="wrap_content"
         android:textSize="25dp"
         android:text="TextView"
-        android:textColor="@color/white"/>
-   <!--<CheckBox
-        android:id="@+id/small_size"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/small_size"/>
-    <CheckBox
-        android:id="@+id/medium_size"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/medium_size"/>
-    <CheckBox
-        android:id="@+id/large_size"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/large_size"/>-->
+        android:textColor="@color/white" />
+
 
 </LinearLayout>

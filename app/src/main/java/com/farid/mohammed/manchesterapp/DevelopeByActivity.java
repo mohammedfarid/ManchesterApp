@@ -30,22 +30,23 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class DevelopeByActivity extends AppCompatActivity {
 
-    Button callbtn,facebtn,webbtn,sendbtn;
+    Button callbtn, facebtn, webbtn, sendbtn;
     TextView textNum;
     private Toolbar toolbar;
     //Permision code that will be checked in the method onRequestPermissionsResult
     private int STORAGE_PERMISSION_CODE = 23;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_develope_by);
 
         callbtn = (Button) findViewById(R.id.callbtn);
         facebtn = (Button) findViewById(R.id.facebtn);
         webbtn = (Button) findViewById(R.id.webbtn);
         sendbtn = (Button) findViewById(R.id.emailbtn);
-       // textNum = (TextView) findViewById(R.id.textTelee);
+        // textNum = (TextView) findViewById(R.id.textTelee);
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
@@ -58,9 +59,9 @@ public class DevelopeByActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
                 callIntent.setData(Uri.parse("tel:01117712974"));
-                try{
+                try {
                     startActivity(callIntent);
-                } catch (Exception e){
+                } catch (Exception e) {
 
                 }
             }
@@ -83,9 +84,9 @@ public class DevelopeByActivity extends AppCompatActivity {
 
             }
         });
-        if(isReadStorageAllowed()){
+        if (isReadStorageAllowed()) {
             //If permission is already having then showing the toast
-            Toast.makeText(DevelopeByActivity.this,"You already have the permission",Toast.LENGTH_LONG).show();
+            Toast.makeText(DevelopeByActivity.this, "You already have the permission", Toast.LENGTH_LONG).show();
             //Existing the method with return
             return;
         }
@@ -93,11 +94,12 @@ public class DevelopeByActivity extends AppCompatActivity {
         //If the app has not the permission then asking for the permission
         requestStoragePermission();
     }
+
     //We are calling this method to check the permission status
     private boolean isReadStorageAllowed() {
         //Getting the permission status
-        int result =ContextCompat.checkSelfPermission(this,
-                        android.Manifest.permission.CALL_PHONE);
+        int result = ContextCompat.checkSelfPermission(this,
+                android.Manifest.permission.CALL_PHONE);
 
         //If permission is granted returning true
         if (result == PackageManager.PERMISSION_GRANTED)
@@ -108,18 +110,18 @@ public class DevelopeByActivity extends AppCompatActivity {
     }
 
     //Requesting permission
-    private void requestStoragePermission(){
+    private void requestStoragePermission() {
 
         if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                        android.Manifest.permission.CALL_PHONE)){
+                android.Manifest.permission.CALL_PHONE)) {
             //If the user has denied the permission previously your code will come to this block
             //Here you can explain why you need this permission
             //Explain here why you need this permission
         }
 
         //And finally ask for the permission
-        ActivityCompat.requestPermissions(this,new String[]{android.Manifest.permission.CALL_PHONE}
-                ,STORAGE_PERMISSION_CODE);
+        ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.CALL_PHONE}
+                , STORAGE_PERMISSION_CODE);
     }
 
     //This method will be called when the user will tap on allow or deny
@@ -129,19 +131,20 @@ public class DevelopeByActivity extends AppCompatActivity {
                                            @NonNull int[] grantResults) {
 
         //Checking the request code of our request
-        if(requestCode == STORAGE_PERMISSION_CODE ){
+        if (requestCode == STORAGE_PERMISSION_CODE) {
 
             //If permission is granted
-            if(grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
                 //Displaying a toast
-                Toast.makeText(this,"Permission granted now you can read the storage",Toast.LENGTH_LONG).show();
-            }else{
+                Toast.makeText(this, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
+            } else {
                 //Displaying another toast if permission is not granted
-                Toast.makeText(this,"Oops you just denied the permission",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
             }
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -150,16 +153,17 @@ public class DevelopeByActivity extends AppCompatActivity {
         item.setVisible(false);
         return super.onCreateOptionsMenu(menu);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         try {
             switch (item.getItemId()) {
                 case android.R.id.home:
-                    Toast.makeText(getApplicationContext(),"actionSetting",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "actionSetting", Toast.LENGTH_SHORT).show();
                     NavUtils.navigateUpFromSameTask(this);
                     break;
                 case R.id.activity_share:
-                    Toast.makeText(getApplicationContext(),"share",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "share", Toast.LENGTH_SHORT).show();
                     Intent share = new Intent(android.content.Intent.ACTION_SEND);
                     share.setType("text/plain");
                     share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);

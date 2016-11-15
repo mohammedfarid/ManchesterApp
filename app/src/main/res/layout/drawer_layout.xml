@@ -4,21 +4,23 @@
     android:layout_height="240dp"
     android:orientation="vertical"
     android:background="@color/gray">
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="240dp"
-    android:background="@mipmap/ic_launcher"
-    android:alpha="0.8"
-    android:orientation="vertical">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:padding="16dp"
-        android:gravity="right"
-        style="@style/TextAppearance.AppCompat.Title"
-        android:text="@string/app_name"
-        android:textColor="@color/white" />
 
-</FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@mipmap/ic_launcher"
+        android:alpha="0.8"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:padding="16dp"
+            android:gravity="right"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/app_name"
+            android:textColor="@color/white" />
+
+    </FrameLayout>
 </LinearLayout>

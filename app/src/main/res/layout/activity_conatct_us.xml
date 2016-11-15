@@ -4,100 +4,112 @@
     android:id="@+id/activity_conatct_us"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/gray"
+    android:orientation="vertical"
     tools:context="com.farid.mohammed.manchesterapp.ConatctUsActivity">
+
     <include
         android:id="@+id/app_bar"
-        layout="@layout/app_bar"/>
+        layout="@layout/app_bar" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:gravity="center"
         android:text="Contact Us"
-        android:textSize="20dp"
         android:textColor="@color/white"
-        android:gravity="center">
+        android:textSize="20dp">
 
     </TextView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="200dp"
             android:layout_height="50dp"
+            android:gravity="center"
             android:text="@string/facebook_page"
-            android:textSize="20dp"
             android:textColor="@color/white"
-            android:gravity="center"
-            />
-        <Button android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:textSize="20dp" />
+
+        <Button
             android:id="@+id/facebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimaryLight"
             android:gravity="center"
-            android:text="@string/facebook_pagebtn"
-            android:background="@color/colorPrimaryLight"></Button>
+            android:text="@string/facebook_pagebtn"></Button>
     </LinearLayout>
+
     <LinearLayout
 
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal">
+
         <TextView
+            android:id="@+id/tele"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:gravity="center"
-            android:id="@+id/tele"
             android:text="@string/tele_num"
-            android:textSize="20dp"
             android:textColor="@color/white"
-            />
-           <TextView
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/textTelee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left|center"
-            android:id="@+id/textTelee"
             android:text="@string/caffeeNum"
-            android:textSize="20dp"
             android:textColor="@color/white"
-            />
+            android:textSize="20dp" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="200dp"
             android:layout_height="50dp"
+            android:gravity="center"
             android:text="@string/website"
-            android:textSize="20dp"
             android:textColor="@color/white"
-            android:gravity="center"
-            />
-        <Button android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:textSize="20dp" />
+
+        <Button
             android:id="@+id/webbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimaryLight"
             android:gravity="center"
-            android:text="@string/websitebtn"
-            android:background="@color/colorPrimaryLight"></Button>
+            android:text="@string/websitebtn"></Button>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="200dp"
             android:layout_height="50dp"
+            android:gravity="center"
             android:text="@string/email"
-            android:textSize="20dp"
             android:textColor="@color/white"
-            android:gravity="center"
-            />
-        <Button android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:textSize="20dp" />
+
+        <Button
             android:id="@+id/emailbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimaryLight"
             android:gravity="center"
-            android:text="@string/emailbtn"
-            android:background="@color/colorPrimaryLight"></Button>
+            android:text="@string/emailbtn"></Button>
     </LinearLayout>
 </LinearLayout>
