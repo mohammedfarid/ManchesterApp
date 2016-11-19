@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "258858287054",
+    "firebase_url": "https://manchesterapp-1475837259914.firebaseio.com",
+    "project_id": "manchesterapp-1475837259914",
+    "storage_bucket": "manchesterapp-1475837259914.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258858287054:android:f3142f7516b9f058",
+        "android_client_info": {
+          "package_name": "com.farid.mohammed.manchesterapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258858287054-q0v1vtn24sf7podu5ed6op7aasiabmlq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.farid.mohammed.manchesterapp",
+            "certificate_hash": "B5E4BBC0C41942EE8A806B0F4CCE00170E8D6839"
+          }
+        },
+        {
+          "client_id": "258858287054-su5lnk18aofb0r7u0lr84dc36ej91r3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAi1Pz2_6guwWQoZ0eCTr0YKd0-5Oj6DJQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258858287054-su5lnk18aofb0r7u0lr84dc36ej91r3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
