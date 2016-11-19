@@ -14,12 +14,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import customs.CustomListView;
 import menuscontant.CheeseManchester;
@@ -32,9 +36,13 @@ import menuscontant.SweetManchester;
 public class MenusFoodsActivity extends AppCompatActivity {
 
     final Context context = this;
-    int laInted = 0, meInted = 0, smInted = 0;
-    EditText ed_la, ed_me, ed_sm;
+    int intEd1 = 0, intEd2 = 0, intEd3 = 0, intEd4 = 0;
+    int intTv1 = 0, intTv2 = 0, intTv3 = 0, intTv4 = 0;
+    int intTotal = 0;
+    EditText ed_1, ed_2, ed_3, ed_4;
     ListView androidListView;
+    ListView collectPrice;
+    ArrayAdapter<String> adapter;
     Intent intent;
     TextView title;
     CustomListView adapterViewAndroid;
@@ -48,6 +56,8 @@ public class MenusFoodsActivity extends AppCompatActivity {
     boolean italianPizza = false, meatFood = false, chickenFood = false,
             seaFood = false, cheeseFood = false, sweetFood = false;
     private Toolbar toolbar;
+    TextView tv_totalPrice;
+    ArrayList<String> price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +72,11 @@ public class MenusFoodsActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(R.string.app_name);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        price = new ArrayList<String>();
+        collectPrice = (ListView) findViewById(R.id.collect_id_price);
+        adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, android.R.id.text1, price);
+        tv_totalPrice = (TextView) findViewById(R.id.totalPrice);
 
 
         italianPizzaManchester = new ItalianPizzaManchester(getApplicationContext());
@@ -113,7 +128,6 @@ public class MenusFoodsActivity extends AppCompatActivity {
             adapterViewAndroid = new CustomListView(MenusFoodsActivity.this,
                     sweetManchester.listViewString, sweetManchester.image);
         }
-
         androidListView = (ListView) findViewById(R.id.listView);
         androidListView.setAdapter(adapterViewAndroid);
         androidListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -123,120 +137,253 @@ public class MenusFoodsActivity extends AppCompatActivity {
                                     int i, long id) {
                 final AppCompatDialog dialog = new AppCompatDialog(context);
                 dialog.setContentView(R.layout.custom_dialog_price);
-                TextView text = (TextView) dialog.findViewById(R.id.title);
+                final TextView text = (TextView) dialog.findViewById(R.id.title);
                 ImageView imageView = (ImageView) dialog.findViewById(R.id.image);
-                Button bu_n_la = (Button) dialog.findViewById(R.id.n_la);
-                Button bu_n_me = (Button) dialog.findViewById(R.id.n_me);
-                Button bu_n_sm = (Button) dialog.findViewById(R.id.n_sm);
+                Button bu_n_1 = (Button) dialog.findViewById(R.id.n_1);
+                Button bu_n_2 = (Button) dialog.findViewById(R.id.n_2);
+                Button bu_n_3 = (Button) dialog.findViewById(R.id.n_3);
+                Button bu_n_4 = (Button) dialog.findViewById(R.id.n_4);
 
-                Button bu_p_la = (Button) dialog.findViewById(R.id.p_la);
-                Button bu_p_me = (Button) dialog.findViewById(R.id.p_me);
-                Button bu_p_sm = (Button) dialog.findViewById(R.id.p_sm);
+                Button bu_p_1 = (Button) dialog.findViewById(R.id.p_1);
+                Button bu_p_2 = (Button) dialog.findViewById(R.id.p_2);
+                Button bu_p_3 = (Button) dialog.findViewById(R.id.p_3);
+                Button bu_p_4 = (Button) dialog.findViewById(R.id.p_4);
 
                 Button bu_ok = (Button) dialog.findViewById(R.id.bu_ok);
 
-                TextView tv_price_la = (TextView) dialog.findViewById(R.id.price_la);
-                TextView tv_price_me = (TextView) dialog.findViewById(R.id.price_me);
-                TextView tv_price_sm = (TextView) dialog.findViewById(R.id.price_sm);
+                final TextView tv_price_1 = (TextView) dialog.findViewById(R.id.price_1);
+                final TextView tv_price_2 = (TextView) dialog.findViewById(R.id.price_2);
+                TextView tv_price_3 = (TextView) dialog.findViewById(R.id.price_3);
+                TextView tv_price_4 = (TextView) dialog.findViewById(R.id.price_4);
 
-                ed_la = (EditText) dialog.findViewById(R.id.ed_la);
-                ed_la.setText("" + laInted, TextView.BufferType.EDITABLE);
-                ed_me = (EditText) dialog.findViewById(R.id.ed_me);
-                ed_me.setText("" + meInted, TextView.BufferType.EDITABLE);
-                ed_sm = (EditText) dialog.findViewById(R.id.ed_sm);
-                ed_sm.setText("" + smInted, TextView.BufferType.EDITABLE);
+                final TextView tv_size_1 = (TextView) dialog.findViewById(R.id.show_size_1);
+                final TextView tv_size_2 = (TextView) dialog.findViewById(R.id.show_size_2);
+                final TextView tv_size_3 = (TextView) dialog.findViewById(R.id.show_size_3);
+                final TextView tv_size_4 = (TextView) dialog.findViewById(R.id.show_size_4);
+
+                intEd1 = 0;
+                intEd2 = 0;
+                intEd3 = 0;
+                intEd4 = 0;
+
+                ed_1 = (EditText) dialog.findViewById(R.id.ed_1);
+                ed_1.setText("" + intEd1, TextView.BufferType.EDITABLE);
+                ed_2 = (EditText) dialog.findViewById(R.id.ed_2);
+                ed_2.setText("" + intEd2, TextView.BufferType.EDITABLE);
+                ed_3 = (EditText) dialog.findViewById(R.id.ed_3);
+                ed_3.setText("" + intEd3, TextView.BufferType.EDITABLE);
+                ed_4 = (EditText) dialog.findViewById(R.id.ed_4);
+                ed_4.setText("" + intEd4, TextView.BufferType.EDITABLE);
+
+                LinearLayout layoutFirst = (LinearLayout) dialog.findViewById(R.id.li_1);
+                LinearLayout layoutSecond = (LinearLayout) dialog.findViewById(R.id.li_2);
+                LinearLayout layoutThird = (LinearLayout) dialog.findViewById(R.id.li_3);
+                LinearLayout layoutFourth = (LinearLayout) dialog.findViewById(R.id.li_4);
 
                 if (italianPizza) {
                     dialog.setTitle(italianPizzaManchester.title);
                     text.setText(italianPizzaManchester.listViewString[i]);
                     imageView.setImageResource(italianPizzaManchester.image);
+                    if (i == 22 || i == 23) {
+                        layoutSecond.setVisibility(LinearLayout.GONE);
+                        layoutThird.setVisibility(LinearLayout.GONE);
+                        layoutFourth.setVisibility(LinearLayout.GONE);
+                        tv_size_1.setText("");
+                        intTv1 = italianPizzaManchester.price_1[i];
+                        tv_price_1.setText("" + intTv1 + "L.E");
+                    } else {
+                        layoutFourth.setVisibility(LinearLayout.GONE);
+                        tv_size_1.setText("Large");
+                        tv_size_2.setText("Medium");
+                        tv_size_3.setText("Small");
+                        intTv1 = italianPizzaManchester.price_1[i];
+                        intTv2 = italianPizzaManchester.price_2[i];
+                        intTv3 = italianPizzaManchester.price_3[i];
+                        tv_price_1.setText("" + intTv1 + "L.E");
+                        tv_price_2.setText("" + intTv2 + "L.E");
+                        tv_price_3.setText("" + intTv3 + "L.E");
+                    }
+
                 }
                 if (meatFood) {
                     dialog.setTitle(meatManchester.title);
                     text.setText(meatManchester.listViewString[i]);
                     imageView.setImageResource(meatManchester.image);
+                    tv_size_1.setText("Small");
+                    tv_size_2.setText("Large");
+                    tv_size_3.setText("Cerip");
+                    tv_size_4.setText("Sarokh");
+                    intTv1 = meatManchester.price_1[i];
+                    intTv2 = meatManchester.price_2[i];
+                    intTv3 = meatManchester.price_3[i];
+                    intTv4 = meatManchester.price_4[i];
+                    tv_price_1.setText("" + intTv1 + "L.E");
+                    tv_price_2.setText("" + intTv2 + "L.E");
+                    tv_price_3.setText("" + intTv3 + "L.E");
+                    tv_price_4.setText("" + intTv4 + "L.E");
                 }
                 if (chickenFood) {
                     dialog.setTitle(chickensManchester.title);
                     text.setText(chickensManchester.listViewString[i]);
                     imageView.setImageResource(chickensManchester.image);
+                    tv_size_1.setText("Small");
+                    tv_size_2.setText("Large");
+                    tv_size_3.setText("Cerip");
+                    tv_size_4.setText("Sarokh");
+                    intTv1 = chickensManchester.price_1[i];
+                    intTv2 = chickensManchester.price_2[i];
+                    intTv3 = chickensManchester.price_3[i];
+                    intTv4 = chickensManchester.price_4[i];
+                    tv_price_1.setText("" + intTv1 + "L.E");
+                    tv_price_2.setText("" + intTv2 + "L.E");
+                    tv_price_3.setText("" + intTv3 + "L.E");
+                    tv_price_4.setText("" + intTv4 + "L.E");
                 }
                 if (seaFood) {
                     dialog.setTitle(seaFoodManchester.title);
                     text.setText(seaFoodManchester.listViewString[i]);
                     imageView.setImageResource(seaFoodManchester.image);
+                    intTv1 = seaFoodManchester.price_1[i];
+                    intTv2 = seaFoodManchester.price_2[i];
+                    intTv3 = seaFoodManchester.price_3[i];
+                    intTv4 = seaFoodManchester.price_4[i];
+                    tv_size_1.setText("Small");
+                    tv_size_2.setText("Large");
+                    tv_size_3.setText("Cerip");
+                    tv_size_4.setText("Sarokh");
+                    tv_price_1.setText("" + intTv1 + "L.E");
+                    tv_price_2.setText("" + intTv2 + "L.E");
+                    tv_price_3.setText("" + intTv3 + "L.E");
+                    tv_price_4.setText("" + intTv4 + "L.E");
                 }
                 if (cheeseFood) {
                     dialog.setTitle(cheeseManchester.title);
                     text.setText(cheeseManchester.listViewString[i]);
                     imageView.setImageResource(cheeseManchester.image);
-                    tv_price_la.setText("" + cheeseManchester.laPrice[i] + "L.E");
-                    tv_price_me.setText("" + cheeseManchester.mePrice[i] + "L.E");
-                    tv_price_sm.setText("" + cheeseManchester.smPrice[i] + "L.E");
+                    layoutSecond.setVisibility(LinearLayout.GONE);
+                    layoutThird.setVisibility(LinearLayout.GONE);
+                    layoutFourth.setVisibility(LinearLayout.GONE);
+                    tv_size_1.setText("");
+                    intTv1 = cheeseManchester.price_1[i];
+                    tv_price_1.setText("" + intTv1 + "L.E");
                 }
                 if (sweetFood) {
                     dialog.setTitle(sweetManchester.title);
                     text.setText(sweetManchester.listViewString[i]);
                     imageView.setImageResource(sweetManchester.image);
+                    layoutSecond.setVisibility(LinearLayout.GONE);
+                    layoutThird.setVisibility(LinearLayout.GONE);
+                    layoutFourth.setVisibility(LinearLayout.GONE);
+                    tv_size_1.setText("");
+                    intTv1 = sweetManchester.price_1[i];
+                    tv_price_1.setText("" + intTv1 + "L.E");
                 }
-                bu_p_la.setOnClickListener(new View.OnClickListener() {
+                bu_p_1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        laInted++;
-                        ed_la.setText("" + laInted);
+                        intEd1++;
+                        ed_1.setText("" + intEd1);
                     }
                 });
-                bu_p_me.setOnClickListener(new View.OnClickListener() {
+                bu_p_2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        meInted++;
-                        ed_me.setText("" + meInted);
+                        intEd2++;
+                        ed_2.setText("" + intEd2);
                     }
                 });
-                bu_p_sm.setOnClickListener(new View.OnClickListener() {
+                bu_p_3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        smInted++;
-                        ed_sm.setText("" + smInted);
+                        intEd3++;
+                        ed_3.setText("" + intEd3);
                     }
                 });
-                bu_n_la.setOnClickListener(new View.OnClickListener() {
+                bu_p_4.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (laInted >= 0) {
-                            laInted--;
+                        intEd4++;
+                        ed_4.setText("" + intEd4);
+                    }
+                });
+                bu_n_1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (intEd1 >= 1) {
+                            intEd1--;
                         } else {
-                            laInted = 0;
+                            intEd1 = 0;
                         }
-                        ed_la.setText("" + laInted);
+                        ed_1.setText("" + intEd1);
 
                     }
                 });
-                bu_n_me.setOnClickListener(new View.OnClickListener() {
+                bu_n_2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (meInted >= 0) {
-                            meInted--;
+                        if (intEd2 >= 1) {
+                            intEd2--;
                         } else {
-                            meInted = 0;
+                            intEd2 = 0;
                         }
-                        ed_me.setText("" + meInted);
+                        ed_2.setText("" + intEd2);
                     }
                 });
-                bu_n_sm.setOnClickListener(new View.OnClickListener() {
+                bu_n_3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (smInted >= 0) {
-                            smInted--;
+                        if (intEd3 >= 1) {
+                            intEd3--;
                         } else {
-                            smInted = 0;
+                            intEd3 = 0;
                         }
-                        ed_sm.setText("" + smInted);
+                        ed_3.setText("" + intEd3);
+                    }
+                });
+                bu_n_4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (intEd4 >= 1) {
+                            intEd4--;
+                        } else {
+                            intEd4 = 0;
+                        }
+                        ed_4.setText("" + intEd4);
                     }
                 });
                 bu_ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        /*Toast.makeText(getApplicationContext(),
+                                "" + text.getText() +
+                                        "\n" + tv_size_1.getText() + " " + intEd1 * intTv1 +
+                                        "\n" + tv_size_2.getText() + " " + intEd2 * intTv2 +
+                                        "\n" + tv_size_3.getText() + " " + intEd3 * intTv3 +
+                                        "\n" + tv_size_4.getText() + " " + intEd4 * intTv4,
+                                Toast.LENGTH_LONG).show();*/
+                        if (intEd1 > 0) {
+                            price.add(text.getText() + " "
+                                    + tv_size_1.getText() + " " + intEd1 * intTv1);
+                            intTotal += intEd1 * intTv1;
+                        }
+                        if (intEd2 > 0) {
+                            price.add(text.getText() + " "
+                                    + tv_size_2.getText() + " " + intEd2 * intTv2);
+                            intTotal += intEd2 * intTv2;
+                        }
+                        if (intEd3 > 0) {
+                            price.add(text.getText() + " "
+                                    + tv_size_3.getText() + " " + intEd3 * intTv3);
+                            intTotal += intEd3 * intTv3;
+                        }
+                        if (intEd4 > 0) {
+                            price.add(text.getText() + " "
+                                    + tv_size_4.getText() + " " + intEd4 * intTv4);
+                            intTotal += intEd4 * intTv4;
+                        }
+                        Toast.makeText(getApplicationContext(), "المجموع" + intTotal, Toast.LENGTH_LONG).show();
+                        collectPrice.setAdapter(adapter);
+                        tv_totalPrice.setText("المجموع : "+intTotal);
                         dialog.dismiss();
                     }
                 });

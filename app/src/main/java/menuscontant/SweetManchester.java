@@ -12,9 +12,7 @@ public class SweetManchester {
     public String title;
     public String[] listViewString;
     public int image = R.mipmap.ic_launcher;
-    public int[] laPrice = {20, 24, 33, 11, 22};
-    public int[] mePrice = {20, 24, 22, 11, 22};
-    public int[] smPrice = {20, 24, 11, 11, 22};
+    public int[] price_1 = {12, 12, 12, 16};
 
     public SweetManchester(Context context) {
         this.title = context.getResources().getString(R.string.sweet_man);

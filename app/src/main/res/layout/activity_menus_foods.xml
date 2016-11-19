@@ -23,6 +23,23 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"></ListView>
+        android:layout_height="350dp"></ListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="@color/place_autocomplete_search_hint"
+        >
+        <ListView
+            android:id="@+id/collect_id_price"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp">
+        </ListView>
+        <TextView
+            android:id="@+id/totalPrice"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            />
+    </LinearLayout>
 
 </LinearLayout>

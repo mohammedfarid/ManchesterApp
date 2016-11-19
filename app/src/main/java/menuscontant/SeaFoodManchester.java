@@ -12,9 +12,10 @@ public class SeaFoodManchester {
     public String title;
     public String[] listViewString;
     public int image = R.mipmap.ic_launcher;
-    public int[] laPrice = {20, 24, 33, 11, 22};
-    public int[] mePrice = {20, 24, 22, 11, 22};
-    public int[] smPrice = {20, 24, 11, 11, 22};
+    public int[] price_1 = {14, 12, 16};
+    public int[] price_2 = {18, 16, 20};
+    public int[] price_3 = {20, 18, 22};
+    public int[] price_4 = {22, 20, 25};
 
     public SeaFoodManchester(Context context) {
         this.title = context.getResources().getString(R.string.sea_food_man);

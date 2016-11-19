@@ -27,6 +27,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/li_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -34,39 +35,41 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/show_size_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="La" />
+            android:text="" />
 
         <Button
-            android:id="@+id/n_la"
+            android:id="@+id/n_1"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:text="-" />
 
         <EditText
-            android:id="@+id/ed_la"
+            android:id="@+id/ed_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp" />
 
         <Button
-            android:id="@+id/p_la"
+            android:id="@+id/p_1"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:gravity="center"
             android:text="+" />
 
         <TextView
-            android:id="@+id/price_la"
+            android:id="@+id/price_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/li_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -74,37 +77,39 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/show_size_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="Me" />
+            android:text="" />
 
         <Button
-            android:id="@+id/n_me"
+            android:id="@+id/n_2"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:text="-" />
 
         <EditText
-            android:id="@+id/ed_me"
+            android:id="@+id/ed_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp" />
 
         <Button
-            android:id="@+id/p_me"
+            android:id="@+id/p_2"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:text="+" />
 
         <TextView
-            android:id="@+id/price_me"
+            android:id="@+id/price_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/li_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -112,31 +117,72 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/show_size_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="Sm" />
+            android:text="" />
 
         <Button
-            android:id="@+id/n_sm"
+            android:id="@+id/n_3"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:text="-" />
 
         <EditText
-            android:id="@+id/ed_sm"
+            android:id="@+id/ed_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp" />
 
         <Button
-            android:id="@+id/p_sm"
+            android:id="@+id/p_3"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:text="+" />
 
         <TextView
-            android:id="@+id/price_sm"
+            android:id="@+id/price_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/li_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/show_size_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="" />
+
+        <Button
+            android:id="@+id/n_4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="-" />
+
+        <EditText
+            android:id="@+id/ed_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp" />
+
+        <Button
+            android:id="@+id/p_4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="+" />
+
+        <TextView
+            android:id="@+id/price_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp" />
