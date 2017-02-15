@@ -11,7 +11,7 @@ import com.farid.mohammed.manchesterapp.R;
 public class SeaFoodManchester {
     public String title;
     public String[] listViewString;
-    public int image = R.mipmap.ic_launcher;
+    public int image = R.mipmap.fish;
     public int[] price_1 = {14, 12, 16};
     public int[] price_2 = {18, 16, 20};
     public int[] price_3 = {20, 18, 22};

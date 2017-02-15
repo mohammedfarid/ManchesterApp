@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3b3b3b</color>
+    <color name="colorPrimary">#480400</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#ff0000</color>
-    <color name="colorPrimaryLight">#ffbf00</color>
-    <color name="gray">#60605b</color>
-    <color name="white">#dfdfdf</color>
+    <color name="colorPrimaryLight">#660909</color>
+    <color name="colorLogoTint">#dbb1a8a7</color>
+    <color name="gray">#5E7078</color>
+    <color name="white">#ffffff</color>
+    <color name="orangeMoshmoshe">#F8D9D5</color>
+    <color name="menuColor">#ff4b47</color>
 </resources>

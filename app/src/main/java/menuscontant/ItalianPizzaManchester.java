@@ -11,7 +11,7 @@ import com.farid.mohammed.manchesterapp.R;
 public class ItalianPizzaManchester {
     public String title;
     public String[] listViewString;
-    public int image = R.mipmap.ic_launcher;
+    public int image = R.mipmap.pizza;
     public int[] price_1 = {25, 25, 25, 30, 30, 30, 35, 35, 35, 35, 45, 50, 45, 50, 50, 55, 45, 50, 60, 55, 55, 60, 5, 10};
     public int[] price_2 = {20, 20, 20, 25, 25, 25, 30, 30, 30, 30, 35, 40, 35, 40, 40, 45, 40, 45, 50, 45, 45, 50, 5, 10};
     public int[] price_3 = {15, 15, 15, 20, 20, 20, 25, 25, 25, 25, 30, 35, 30, 35, 35, 40, 35, 40, 40, 35, 35, 40, 5, 10};

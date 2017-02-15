@@ -30,7 +30,6 @@ public class ReserveTableActivity extends AppCompatActivity {
         callbtn = (Button) findViewById(R.id.callbtncenter);
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-        setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         callbtn.setOnClickListener(new View.OnClickListener() {

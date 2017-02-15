@@ -42,12 +42,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     GridView androidGridView;
     String[] gridViewString;
     int[] gridViewImageId = {
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher
+            R.mipmap.pizza,
+            R.mipmap.meat,
+            R.mipmap.chiken,
+            R.mipmap.fish,
+            R.mipmap.cheese,
+            R.mipmap.muffin
     };
 
     @Override
@@ -59,12 +59,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         lang = Locale.getDefault().toString().toLowerCase();
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(R.string.app_name);
+        toolbar.setLogo(R.mipmap.ic_launcher);
+        getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         //add DrawerNavigation
         navigationView = (NavigationView) findViewById(R.id.main_drawer);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setItemIconTintList(null);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this
                 , drawerLayout

@@ -11,7 +11,7 @@ import com.farid.mohammed.manchesterapp.R;
 public class CheeseManchester {
     public String title;
     public String[] listViewString;
-    public int image = R.mipmap.ic_launcher;
+    public int image = R.mipmap.cheese;
     public int[] price_1 = {8, 8, 8, 8, 12};
 
     public CheeseManchester(Context context) {

@@ -1,28 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/gray">
-
-
-    <android.support.v4.widget.DrawerLayout android:id="@+id/drawer_layout"
+    android:background="@color/colorPrimaryLight"
+    android:orientation="vertical">
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
-
-        <LinearLayout
+        android:layout_height="match_parent">
+        <android.support.v7.widget.LinearLayoutCompat
             android:id="@+id/android_gridview_example"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@color/gray">
+            android:orientation="vertical">
 
             <include
                 android:id="@+id/app_bar"
                 layout="@layout/app_bar" />
-
+             <RelativeLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center">
+                 <android.support.v7.widget.AppCompatImageView
+                     android:layout_width="300dp"
+                     android:layout_height="300dp"
+                     android:background="@mipmap/logo_lunchers"
+                     android:backgroundTint="@color/colorLogoTint"
+                      android:layout_centerHorizontal="true"
+                     android:layout_centerVertical="true"
+                     />
             <GridView
                 android:id="@+id/grid_view_image_text"
                 android:layout_width="match_parent"
@@ -31,19 +38,20 @@
                 android:layout_marginRight="20dp"
                 android:columnWidth="150dp"
                 android:gravity="center"
-                android:numColumns="auto_fit" />
-        </LinearLayout>
-
+                android:numColumns="auto_fit"
+                 />
+             </RelativeLayout>
+        </android.support.v7.widget.LinearLayoutCompat>
         <android.support.design.widget.NavigationView
             android:id="@+id/main_drawer"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
-            android:layout_width="wrap_content"
             android:layout_gravity="start"
+            android:theme="@style"
             app:headerLayout="@layout/drawer_layout"
-            app:itemIconTint="@color/colorAccent"
-            app:itemTextColor="#b9ad00"
+            app:itemTextColor="@color/menuColor"
             app:menu="@menu/menu_drawer">
 
         </android.support.design.widget.NavigationView>
     </android.support.v4.widget.DrawerLayout>
-</LinearLayout>
+</android.support.v7.widget.LinearLayoutCompat>

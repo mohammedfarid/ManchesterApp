@@ -4,19 +4,19 @@
         android:id="@+id/menu_groups"
         android:checkableBehavior="single">
         <item android:id="@+id/menus_food"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@mipmap/cheese_burger"
             android:title="@string/menus_food"/>
         <item android:id="@+id/branches"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@mipmap/salt"
             android:title="@string/branch"/>
         <item android:id="@+id/reseved_table"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@mipmap/incoming_call"
             android:title="@string/reseved_table"/>
         <item android:id="@+id/offers_event"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@mipmap/theater"
             android:title="@string/offers_events"/>
         <item android:id="@+id/contact_us"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@mipmap/telemarketer"
             android:title="@string/contact_us"/>
 
     </group>
@@ -24,10 +24,10 @@
     android:id="@+id/content_group"
     android:checkableBehavior="single">
         <item android:id="@+id/bar_code"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@mipmap/message"
             android:title="@string/bar_code"/>
         <item android:id="@+id/developed_by"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@mipmap/settings"
             android:title="@string/developed_by"/>
 
     </group>

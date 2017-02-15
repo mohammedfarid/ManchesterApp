@@ -11,7 +11,7 @@ import com.farid.mohammed.manchesterapp.R;
 public class SweetManchester {
     public String title;
     public String[] listViewString;
-    public int image = R.mipmap.ic_launcher;
+    public int image = R.mipmap.muffin;
     public int[] price_1 = {12, 12, 12, 16};
 
     public SweetManchester(Context context) {

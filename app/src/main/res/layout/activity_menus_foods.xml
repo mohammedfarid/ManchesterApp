@@ -1,45 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight"
     android:orientation="vertical"
-    tools:context=".MenusFoodsActivity"
-    android:background="@color/gray">
+    tools:context=".MenusFoodsActivity">
 
     <include
         android:id="@+id/app_bar"
         layout="@layout/app_bar" />
 
-    <TextView
+    <android.support.v7.widget.AppCompatTextView
         android:id="@+id/title_food"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:textStyle="bold"
+        android:text=" Computer Languages..."
         android:textColor="@color/white"
-        android:text=" Computer Languages..." />
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="fill_parent"
-        android:layout_height="350dp"></ListView>
-    <LinearLayout
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/logo_lunchers"
+            android:backgroundTint="@color/colorLogoTint" />
+
+        <android.support.v7.widget.ListViewCompat
+            android:id="@+id/listView"
+            android:layout_width="fill_parent"
+            android:layout_height="350dp">
+
+        </android.support.v7.widget.ListViewCompat>
+    </RelativeLayout>
+
+    <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:background="@color/place_autocomplete_search_hint"
-        >
-        <ListView
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.ListViewCompat
             android:id="@+id/collect_id_price"
             android:layout_width="fill_parent"
-            android:layout_height="150dp">
-        </ListView>
-        <TextView
+            android:layout_height="150dp"/>
+
+        <android.support.v7.widget.AppCompatTextView
             android:id="@+id/totalPrice"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            />
-    </LinearLayout>
+            android:layout_height="50dp" />
+    </android.support.v7.widget.LinearLayoutCompat>
 
-</LinearLayout>
+</android.support.v7.widget.LinearLayoutCompat>
